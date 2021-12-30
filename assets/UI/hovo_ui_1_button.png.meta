@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "7a579450-55e1-4084-8331-9381b22f3736",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 123,
+  "height": 120,
+  "platformSettings": {},
+  "subMetas": {
+    "hovo_ui_1_button": {
+      "ver": "1.0.6",
+      "uuid": "72860ec7-75dd-4a68-9f77-e357baf2cf8e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "7a579450-55e1-4084-8331-9381b22f3736",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 123,
+      "height": 120,
+      "rawWidth": 123,
+      "rawHeight": 120,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

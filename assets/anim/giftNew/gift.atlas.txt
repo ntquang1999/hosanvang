@@ -1,0 +1,62 @@
+
+gift.png
+size: 1908,1512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+day
+  rotate: true
+  xy: 1076, 2
+  size: 416, 492
+  orig: 416, 492
+  offset: 0, 0
+  index: -1
+hop
+  rotate: false
+  xy: 759, 966
+  size: 572, 544
+  orig: 573, 545
+  offset: 1, 0
+  index: -1
+hop1
+  rotate: false
+  xy: 1333, 966
+  size: 572, 544
+  orig: 573, 545
+  offset: 1, 0
+  index: -1
+hop2
+  rotate: false
+  xy: 759, 420
+  size: 572, 544
+  orig: 573, 545
+  offset: 1, 0
+  index: -1
+hop3
+  rotate: false
+  xy: 1333, 420
+  size: 572, 544
+  orig: 573, 545
+  offset: 1, 0
+  index: -1
+hop4
+  rotate: false
+  xy: 2, 79
+  size: 572, 544
+  orig: 573, 545
+  offset: 1, 0
+  index: -1
+hopquaglow
+  rotate: false
+  xy: 2, 625
+  size: 755, 885
+  orig: 763, 894
+  offset: 4, 4
+  index: -1
+no
+  rotate: false
+  xy: 576, 27
+  size: 498, 391
+  orig: 498, 391
+  offset: 0, 0
+  index: -1

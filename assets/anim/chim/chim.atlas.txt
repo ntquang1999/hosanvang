@@ -1,0 +1,104 @@
+
+chim.png
+size: 1180,1020
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2_chan1
+  rotate: true
+  xy: 1042, 554
+  size: 93, 120
+  orig: 94, 121
+  offset: 0, 1
+  index: -1
+2_chan2
+  rotate: false
+  xy: 944, 522
+  size: 96, 125
+  orig: 97, 126
+  offset: 0, 1
+  index: -1
+2_dau
+  rotate: false
+  xy: 486, 449
+  size: 456, 568
+  orig: 456, 568
+  offset: 0, 0
+  index: -1
+2_mat
+  rotate: true
+  xy: 1044, 48
+  size: 211, 111
+  orig: 213, 113
+  offset: 1, 1
+  index: -1
+2_tay1
+  rotate: true
+  xy: 944, 649
+  size: 163, 231
+  orig: 163, 231
+  offset: 0, 0
+  index: -1
+2_tay2
+  rotate: false
+  xy: 944, 814
+  size: 221, 203
+  orig: 221, 203
+  offset: 0, 0
+  index: -1
+2_than
+  rotate: false
+  xy: 513, 2
+  size: 341, 445
+  orig: 341, 445
+  offset: 0, 0
+  index: -1
+dau
+  rotate: false
+  xy: 2, 413
+  size: 482, 604
+  orig: 482, 604
+  offset: 0, 0
+  index: -1
+mat
+  rotate: false
+  xy: 2, 27
+  size: 202, 43
+  orig: 205, 45
+  offset: 1, 1
+  index: -1
+mat2
+  rotate: false
+  xy: 2, 12
+  size: 198, 13
+  orig: 200, 15
+  offset: 1, 1
+  index: -1
+mui
+  rotate: false
+  xy: 1042, 465
+  size: 114, 87
+  orig: 114, 87
+  offset: 0, 0
+  index: -1
+tay1
+  rotate: true
+  xy: 856, 261
+  size: 186, 242
+  orig: 186, 242
+  offset: 0, 0
+  index: -1
+tay2
+  rotate: false
+  xy: 856, 17
+  size: 186, 242
+  orig: 186, 242
+  offset: 0, 0
+  index: -1
+than
+  rotate: true
+  xy: 2, 72
+  size: 339, 509
+  orig: 339, 509
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "4b2ae3ef-6475-4b78-9b03-3c3f33f52eed",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1080,
+  "height": 417,
+  "platformSettings": {},
+  "subMetas": {
+    "BG-game_0001s_0000_tham-co": {
+      "ver": "1.0.6",
+      "uuid": "8784875f-ebbf-4fbd-a308-0d8a11326abe",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "4b2ae3ef-6475-4b78-9b03-3c3f33f52eed",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 417,
+      "rawWidth": 1080,
+      "rawHeight": 417,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

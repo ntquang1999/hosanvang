@@ -1,0 +1,300 @@
+
+ho.png
+size: 1772,1040
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ho1_bantay1
+  rotate: true
+  xy: 1218, 324
+  size: 167, 145
+  orig: 169, 148
+  offset: 1, 2
+  index: -1
+ho1_bantay2
+  rotate: false
+  xy: 1202, 177
+  size: 167, 145
+  orig: 169, 148
+  offset: 1, 2
+  index: -1
+ho1_canhtay1
+  rotate: false
+  xy: 1105, 4
+  size: 174, 171
+  orig: 176, 173
+  offset: 1, 1
+  index: -1
+ho1_canhtay2
+  rotate: false
+  xy: 1281, 4
+  size: 174, 171
+  orig: 176, 173
+  offset: 1, 1
+  index: -1
+ho1_chan1
+  rotate: false
+  xy: 344, 34
+  size: 129, 77
+  orig: 131, 79
+  offset: 1, 1
+  index: -1
+ho1_chan2
+  rotate: false
+  xy: 1517, 227
+  size: 127, 77
+  orig: 129, 79
+  offset: 1, 1
+  index: -1
+ho1_duoi
+  rotate: true
+  xy: 1640, 740
+  size: 298, 120
+  orig: 298, 120
+  offset: 0, 0
+  index: -1
+ho1_longmay
+  rotate: true
+  xy: 906, 300
+  size: 274, 49
+  orig: 274, 49
+  offset: 0, 0
+  index: -1
+ho1_mat
+  rotate: false
+  xy: 2, 573
+  size: 580, 465
+  orig: 580, 465
+  offset: 0, 0
+  index: -1
+ho1_mat1
+  rotate: false
+  xy: 2, 14
+  size: 340, 97
+  orig: 340, 97
+  offset: 0, 0
+  index: -1
+ho1_mat2
+  rotate: false
+  xy: 994, 493
+  size: 342, 119
+  orig: 345, 122
+  offset: 1, 2
+  index: -1
+ho1_mom1
+  rotate: false
+  xy: 732, 199
+  size: 61, 40
+  orig: 65, 42
+  offset: 2, 1
+  index: -1
+ho1_mom2
+  rotate: false
+  xy: 1457, 18
+  size: 134, 31
+  orig: 137, 33
+  offset: 2, 1
+  index: -1
+ho1_qauan2
+  rotate: false
+  xy: 1365, 365
+  size: 160, 144
+  orig: 162, 146
+  offset: 1, 1
+  index: -1
+ho1_quan1
+  rotate: true
+  xy: 1371, 203
+  size: 160, 144
+  orig: 162, 146
+  offset: 1, 1
+  index: -1
+ho1_tai1
+  rotate: false
+  xy: 1613, 589
+  size: 149, 149
+  orig: 156, 154
+  offset: 1, 4
+  index: -1
+ho1_tai2
+  rotate: false
+  xy: 1457, 51
+  size: 146, 150
+  orig: 156, 152
+  offset: 9, 1
+  index: -1
+ho1_thanao
+  rotate: false
+  xy: 994, 614
+  size: 391, 424
+  orig: 391, 424
+  offset: 0, 0
+  index: -1
+ho1_viettellogo
+  rotate: true
+  xy: 1736, 355
+  size: 112, 34
+  orig: 114, 36
+  offset: 1, 1
+  index: -1
+ho2_bantay1
+  rotate: false
+  xy: 957, 339
+  size: 259, 152
+  orig: 261, 154
+  offset: 1, 1
+  index: -1
+ho2_bantay2
+  rotate: false
+  xy: 1387, 625
+  size: 224, 199
+  orig: 226, 201
+  offset: 1, 1
+  index: -1
+ho2_canhtay1
+  rotate: true
+  xy: 1387, 511
+  size: 112, 181
+  orig: 114, 183
+  offset: 1, 1
+  index: -1
+ho2_canhtay2
+  rotate: false
+  xy: 732, 2
+  size: 99, 179
+  orig: 101, 181
+  offset: 1, 1
+  index: -1
+ho2_chan1
+  rotate: true
+  xy: 1605, 79
+  size: 146, 137
+  orig: 146, 137
+  offset: 0, 0
+  index: -1
+ho2_chan2
+  rotate: false
+  xy: 1527, 306
+  size: 150, 131
+  orig: 150, 131
+  offset: 0, 0
+  index: -1
+ho2_dau
+  rotate: false
+  xy: 2, 113
+  size: 561, 458
+  orig: 563, 460
+  offset: 1, 1
+  index: -1
+ho2_duoi
+  rotate: false
+  xy: 1387, 826
+  size: 251, 212
+  orig: 251, 212
+  offset: 0, 0
+  index: -1
+ho2_longmay
+  rotate: false
+  xy: 475, 57
+  size: 86, 54
+  orig: 89, 56
+  offset: 1, 1
+  index: -1
+ho2_longmay2
+  rotate: false
+  xy: 1646, 233
+  size: 70, 60
+  orig: 72, 62
+  offset: 1, 1
+  index: -1
+ho2_mat3
+  rotate: true
+  xy: 565, 238
+  size: 333, 110
+  orig: 335, 112
+  offset: 1, 1
+  index: -1
+ho2_mom1
+  rotate: true
+  xy: 1527, 446
+  size: 63, 41
+  orig: 65, 44
+  offset: 1, 1
+  index: -1
+ho2_mom2
+  rotate: true
+  xy: 1725, 469
+  size: 118, 31
+  orig: 121, 33
+  offset: 2, 1
+  index: -1
+ho2_mom3
+  rotate: true
+  xy: 1679, 295
+  size: 142, 55
+  orig: 144, 57
+  offset: 1, 1
+  index: -1
+ho2_quan1
+  rotate: false
+  xy: 565, 2
+  size: 165, 234
+  orig: 165, 234
+  offset: 0, 0
+  index: -1
+ho2_quan2
+  rotate: true
+  xy: 957, 183
+  size: 154, 243
+  orig: 154, 243
+  offset: 0, 0
+  index: -1
+ho2_rau
+  rotate: true
+  xy: 833, 3
+  size: 243, 87
+  orig: 245, 89
+  offset: 1, 1
+  index: -1
+ho2_tai1
+  rotate: true
+  xy: 1570, 439
+  size: 148, 153
+  orig: 155, 159
+  offset: 6, 4
+  index: -1
+ho2_tai2
+  rotate: true
+  xy: 922, 6
+  size: 175, 181
+  orig: 187, 185
+  offset: 1, 2
+  index: -1
+ho2_than
+  rotate: false
+  xy: 584, 576
+  size: 408, 462
+  orig: 408, 462
+  offset: 0, 0
+  index: -1
+ho2_viettellogo
+  rotate: true
+  xy: 1338, 522
+  size: 90, 38
+  orig: 92, 40
+  offset: 1, 1
+  index: -1
+mat1
+  rotate: true
+  xy: 677, 241
+  size: 333, 122
+  orig: 335, 124
+  offset: 1, 1
+  index: -1
+mat2
+  rotate: true
+  xy: 801, 248
+  size: 326, 103
+  orig: 326, 103
+  offset: 0, 0
+  index: -1

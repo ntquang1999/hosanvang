@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "87f0b4c6-2d64-493d-91b1-fa5c4d97387d",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1080,
+  "height": 1271,
+  "platformSettings": {},
+  "subMetas": {
+    "BG-game_0002s_0002_cayphiasau2": {
+      "ver": "1.0.6",
+      "uuid": "2fc5167f-ce09-4cf3-97ba-94ca555b817e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "87f0b4c6-2d64-493d-91b1-fa5c4d97387d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 1271,
+      "rawWidth": 1080,
+      "rawHeight": 1271,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

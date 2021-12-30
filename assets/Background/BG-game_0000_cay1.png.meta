@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "87fa41c2-f462-415f-96a8-8c3627c7f85b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 439,
+  "height": 224,
+  "platformSettings": {},
+  "subMetas": {
+    "BG-game_0000_cay1": {
+      "ver": "1.0.6",
+      "uuid": "7b81b89a-fdfc-436f-8e85-3d8b7fbd2574",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "87fa41c2-f462-415f-96a8-8c3627c7f85b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 439,
+      "height": 224,
+      "rawWidth": 439,
+      "rawHeight": 224,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

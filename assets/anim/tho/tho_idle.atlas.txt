@@ -1,0 +1,153 @@
+
+tho_idle.png
+size: 1964,856
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2_chan1
+  rotate: true
+  xy: 222, 8
+  size: 131, 220
+  orig: 133, 222
+  offset: 1, 1
+  index: -1
+2_chan2
+  rotate: true
+  xy: 2, 7
+  size: 132, 218
+  orig: 134, 221
+  offset: 1, 2
+  index: -1
+2_dau
+  rotate: true
+  xy: 671, 236
+  size: 617, 480
+  orig: 619, 482
+  offset: 1, 1
+  index: -1
+2_duoi
+  rotate: false
+  xy: 1065, 31
+  size: 183, 203
+  orig: 183, 203
+  offset: 0, 0
+  index: -1
+2_mat
+  rotate: false
+  xy: 444, 28
+  size: 211, 111
+  orig: 213, 113
+  offset: 1, 1
+  index: -1
+2_mom1
+  rotate: true
+  xy: 657, 32
+  size: 107, 43
+  orig: 109, 45
+  offset: 1, 1
+  index: -1
+2_rau1
+  rotate: false
+  xy: 702, 5
+  size: 156, 229
+  orig: 158, 232
+  offset: 1, 1
+  index: -1
+2_tai1
+  rotate: false
+  xy: 1714, 19
+  size: 245, 286
+  orig: 245, 286
+  offset: 0, 0
+  index: -1
+2_tai2
+  rotate: false
+  xy: 1714, 560
+  size: 245, 293
+  orig: 245, 293
+  offset: 0, 0
+  index: -1
+2_tay1
+  rotate: false
+  xy: 1487, 577
+  size: 101, 276
+  orig: 101, 276
+  offset: 0, 0
+  index: -1
+2_tay2
+  rotate: true
+  xy: 860, 13
+  size: 221, 203
+  orig: 221, 203
+  offset: 0, 0
+  index: -1
+2_than
+  rotate: true
+  xy: 1250, 2
+  size: 352, 462
+  orig: 352, 462
+  offset: 0, 0
+  index: -1
+dau
+  rotate: false
+  xy: 2, 141
+  size: 667, 712
+  orig: 667, 712
+  offset: 0, 0
+  index: -1
+mat
+  rotate: true
+  xy: 1487, 356
+  size: 202, 43
+  orig: 205, 45
+  offset: 1, 1
+  index: -1
+mat2
+  rotate: false
+  xy: 444, 13
+  size: 198, 13
+  orig: 200, 15
+  offset: 1, 1
+  index: -1
+mom1
+  rotate: true
+  xy: 1590, 692
+  size: 161, 37
+  orig: 163, 39
+  offset: 1, 1
+  index: -1
+mom2
+  rotate: true
+  xy: 1714, 307
+  size: 63, 55
+  orig: 65, 57
+  offset: 1, 1
+  index: -1
+mui
+  rotate: false
+  xy: 1153, 291
+  size: 86, 63
+  orig: 88, 65
+  offset: 1, 1
+  index: -1
+tay1
+  rotate: true
+  xy: 1532, 372
+  size: 186, 242
+  orig: 186, 242
+  offset: 0, 0
+  index: -1
+tay2
+  rotate: false
+  xy: 1776, 316
+  size: 186, 242
+  orig: 186, 242
+  offset: 0, 0
+  index: -1
+than
+  rotate: false
+  xy: 1153, 356
+  size: 332, 497
+  orig: 332, 497
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ebc69d5a-0c0e-4809-b56c-33a7023dfff7",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1080,
+  "height": 251,
+  "platformSettings": {},
+  "subMetas": {
+    "BG-game_0001s_0001_mat-dat": {
+      "ver": "1.0.6",
+      "uuid": "3c6487e7-de86-41b5-9dd5-36fb4a327cb1",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ebc69d5a-0c0e-4809-b56c-33a7023dfff7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 251,
+      "rawWidth": 1080,
+      "rawHeight": 251,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "5525249d-57d9-4f97-adad-b148c8b67073",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 965,
+  "height": 1461,
+  "platformSettings": {},
+  "subMetas": {
+    "BG-game_0000s_0000s_0000_cayto1": {
+      "ver": "1.0.6",
+      "uuid": "4215b122-3f35-486f-9b4a-37116790a096",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "5525249d-57d9-4f97-adad-b148c8b67073",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 965,
+      "height": 1461,
+      "rawWidth": 965,
+      "rawHeight": 1461,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
