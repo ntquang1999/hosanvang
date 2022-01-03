@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "07c418b9-d971-4d94-be06-9c313f3f1734",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 723,
+  "height": 179,
+  "platformSettings": {},
+  "subMetas": {
+    "Quý khách không đủ xu vàng để đổi lấy gói lượt chơi này. Vui lòng thử lại sau": {
+      "ver": "1.0.6",
+      "uuid": "c3f2d585-57e1-4a23-846c-4fb327598646",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "07c418b9-d971-4d94-be06-9c313f3f1734",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 723,
+      "height": 179,
+      "rawWidth": 723,
+      "rawHeight": 179,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

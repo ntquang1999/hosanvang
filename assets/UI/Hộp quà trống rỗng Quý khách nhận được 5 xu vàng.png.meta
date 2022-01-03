@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "37d41be0-3873-48ba-9472-e3c5db79eb78",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 486,
+  "height": 180,
+  "platformSettings": {},
+  "subMetas": {
+    "Hộp quà trống rỗng Quý khách nhận được 5 xu vàng": {
+      "ver": "1.0.6",
+      "uuid": "9436ae54-bac7-49f9-9be6-426fd04d6b54",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "37d41be0-3873-48ba-9472-e3c5db79eb78",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 486,
+      "height": 179,
+      "rawWidth": 486,
+      "rawHeight": 180,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

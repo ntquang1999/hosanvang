@@ -1,4 +1,5 @@
 import codeBox from "./codebox";
+import GameData from "./GameData";
 import ticketBox from "./ticketbox";
 
 const {ccclass, property} = cc._decorator;
@@ -34,14 +35,27 @@ export default class NewClass extends cc.Component {
     rightPanel: cc.Node = null;
 
     protected onLoad(): void {
-        for(let i = 0; i<20;i++)
+        let codeCount: number = GameData.codeList.length;
+        let ticketCount: number = GameData.ticketList.length;
+        for(let i = 0; i<codeCount;i++)
         {
             let node = cc.instantiate(this.codeBox);
             node.parent = this.codeContentBox;
-            node.getComponent(codeBox).codetype = this.getRandomInt(1,4);
-            let node2 = cc.instantiate(this.ticketBox);
-            node2.parent = this.ticketContentBox;
-            node2.getComponent(ticketBox).ticket.string = this.getRandomInt(1,1000)+ "MSZI"+this.getRandomInt(1,1000) +'AK47';
+            node.getComponent(codeBox).codetype = GameData.codeList[i].type;
+            node.getComponent(codeBox).codeString = GameData.codeList[i].code;
+            node.getComponent(codeBox).timeString = GameData.codeList[i].time;
+
+            // let node2 = cc.instantiate(this.ticketBox);
+            // node2.parent = this.ticketContentBox;
+            // node2.getComponent(ticketBox).ticket.string = this.getRandomInt(1,1000)+ "MSZI"+this.getRandomInt(1,1000) +'AK47';
+        }
+
+        for(let i = 0; i<ticketCount;i++)
+        {
+            let node = cc.instantiate(this.ticketBox);
+            node.parent = this.ticketContentBox;
+            node.getComponent(ticketBox).ticket.string = GameData.ticketList[i].ticket;
+            node.getComponent(ticketBox).time.string = GameData.ticketList[i].time;
         }
         
     }

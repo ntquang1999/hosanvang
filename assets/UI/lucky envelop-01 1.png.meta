@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "8982f41c-1511-4662-930b-78b8aed4740c",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 400,
+  "height": 543,
+  "platformSettings": {},
+  "subMetas": {
+    "lucky envelop-01 1": {
+      "ver": "1.0.6",
+      "uuid": "d195bf90-ed4c-4c1d-9299-39250fe39663",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "8982f41c-1511-4662-930b-78b8aed4740c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 400,
+      "height": 542,
+      "rawWidth": 400,
+      "rawHeight": 543,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

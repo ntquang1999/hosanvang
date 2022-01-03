@@ -53,6 +53,8 @@ export default class CatchScene extends cc.Component {
     @property(cc.Node)
     giftRealNode: cc.Node = null;
 
+
+
     giftFake: cc.Node = null;
 
     running: boolean = false;

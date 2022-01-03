@@ -5,6 +5,10 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import GameData from "./GameData";
+import largepopup from "./largepopup";
+import smallpopup from "./Smallpopup";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -60,6 +64,12 @@ export default class NewClass extends cc.Component {
     @property(cc.Button)
     shopBtn: cc.Button = null;
 
+    @property(cc.Button)
+    rankBtn: cc.Button = null;
+
+    @property(cc.Prefab)
+    rankPopup: cc.Prefab = null;
+
     @property(cc.Prefab)
     shopPopup: cc.Prefab = null;
 
@@ -69,29 +79,65 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     giftListPopup: cc.Prefab = null;
 
+    @property(cc.Prefab)
+    largepopup: cc.Prefab = null;
+
+    @property(cc.Prefab)
+    smallpopup: cc.Prefab = null;
+
+    @property(cc.Label)
+    cooldown: cc.Label = null;
+
+    @property(cc.Label)
+    huntTurn: cc.Label = null;
+
+    @property(cc.Node)
+    huntTurnComp: cc.Node = null;
+
     playing: boolean = false;
 
     pos: number[] = [-1,-1,-1,-1];
 
     timer: number[] = [-0.5,-0.5,-0.5,-0.5];
 
+    cooldownTime: number = 60;
+
     start()
     {
         this.playBtn.node.on("click", ()=>this.onPlayClick());
+        this.rankBtn.node.on("click", ()=>this.onRankClick());
         this.ruleBtn.node.on("click", ()=>this.onRuleClick());  
         this.historyBtn.node.on("click", ()=>this.onHistoryClick());   
         this.shopBtn.node.on("click", ()=>this.onShopClick()); 
-        this.giftListBtn.node.on("click", ()=>this.onGiftListClick());          
+        this.giftListBtn.node.on("click", ()=>this.onGiftListClick());  
+        GameData.generateData();   
+        this.huntTurn.string = GameData.huntTurn + "";
+    }
+
+    decreseTimer()
+    {
+        this.cooldown.string = this.cooldownTime-- + "s";
     }
 
     onPlayClick()
     {
+        this.huntTurnComp.active = false;
+        GameData.huntTurn--;
         this.playing = true;
         this.tiger.active = true;
         this.tiger.getComponent(sp.Skeleton).animation = "1dile_dung_saulung";
         this.buttons.active = false;
         //this.tigerIdle.active = false;
         cc.tween(this.tigerIdle).to(0.3,{opacity:0}).call(()=>this.tigerIdle.active = false).start();
+        this.schedule(this.decreseTimer, 1);
+    }
+
+    onRankClick()
+    {
+        let popup = cc.instantiate(this.rankPopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = this.popupParent;
     }
 
     onRuleClick()
@@ -128,6 +174,8 @@ export default class NewClass extends cc.Component {
 
     update(dt)
     {
+        if(this.cooldown.string == "0s")
+            cc.director.loadScene("MainScene");
         if(this.playing)
         {           
             for(let i = 0; i<4;i++)
@@ -212,5 +260,23 @@ export default class NewClass extends cc.Component {
                             {this.timer[i] = 1; return "idle1";}
                             else {this.timer[i] = 1.5; return "idle4";}
         return "idle4";
+    }
+
+    showLargePopup(type: number)
+    {
+        largepopup.type = type;
+        let popup = cc.instantiate(this.largepopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = this.popupParent;
+    }
+
+    showSmallPopup(type: number)
+    {
+        smallpopup.type = type;
+        let popup = cc.instantiate(this.smallpopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = this.popupParent;
     }
 }

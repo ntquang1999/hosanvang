@@ -1,3 +1,5 @@
+import smallpopup from "./Smallpopup";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -21,35 +23,54 @@ export default class codeBox extends cc.Component {
     @property(cc.Button)
     copyBtn: cc.Button = null;
 
+    @property(cc.Prefab)
+    smallpopup: cc.Prefab = null;
+
     codetype: number = 0;
+    codeString: string = "NULL";
+    timeString: string = "NULL";
 
     protected start(): void {
-        this.copyBtn.node.on("click", ()=> codeBox.copyTextToClipboard(this.code.string));
+
+        this.copyBtn.node.on("click", ()=> this.onCopyClick());
     }
 
 
+    onCopyClick()
+    {
+        smallpopup.type = 2;
+        let popup = cc.instantiate(this.smallpopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = cc.find("Canvas/PopUp");
+        codeBox.copyTextToClipboard(this.code.string);
+    }
+
 
     protected update(dt: number): void {
-        if(this.codetype == 1)
+        if(this.codetype == 0)
         {
             this.shopee.active = true;
             this.tiki.active = false;
             this.laz.active = false;
-            this.code.string = "SHOPEE10K";
+            this.code.string = this.codeString;
+            this.time.string = this.timeString;
         } else 
-        if(this.codetype == 2)
+        if(this.codetype == 1)
         {
             this.shopee.active = false;
             this.tiki.active = true;
             this.laz.active = false;
-            this.code.string = "TIKI10K";
+            this.code.string = this.codeString;
+            this.time.string = this.timeString;
         } else
-        if(this.codetype == 3)
+        if(this.codetype == 2)
         {
             this.shopee.active = false;
             this.tiki.active = false;
             this.laz.active = true;
-            this.code.string = "LAZADA10K";
+            this.code.string = this.codeString;
+            this.time.string = this.timeString;
         }
 
 

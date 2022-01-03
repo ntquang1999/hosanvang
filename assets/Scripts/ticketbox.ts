@@ -1,3 +1,5 @@
+import smallpopup from "./Smallpopup";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -13,8 +15,21 @@ export default class ticketBox extends cc.Component {
     @property(cc.Button)
     copyBtn: cc.Button = null;
 
+    @property(cc.Prefab)
+    smallpopup: cc.Prefab = null;
+
     protected start(): void {
-        this.copyBtn.node.on("click", ()=> ticketBox.copyTextToClipboard(this.ticket.string));
+        this.copyBtn.node.on("click", ()=> this.onCopyClick());
+    }
+
+    onCopyClick()
+    {
+        smallpopup.type = 2;
+        let popup = cc.instantiate(this.smallpopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = cc.find("Canvas/PopUp");
+        ticketBox.copyTextToClipboard(this.ticket.string)
     }
 
     private static fallbackCopyTextToClipboard(text: string) {

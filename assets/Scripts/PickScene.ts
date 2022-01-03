@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import GameData from "./GameData";
+import largepopup from "./largepopup";
 
 const {ccclass, property} = cc._decorator;
 
@@ -35,6 +36,16 @@ export default class NewClass extends cc.Component {
     @property(cc.Button)
     jumpbtn: cc.Button = null;
 
+    @property(cc.Label)
+    cooldown: cc.Label = null;
+
+    @property(cc.Prefab)
+    largePopup: cc.Prefab = null;
+
+    pauseTime: boolean = false;
+
+    cooldownTime: number = 20;
+
     jumptime = -1;
 
     protected onLoad(): void {
@@ -42,8 +53,15 @@ export default class NewClass extends cc.Component {
        cc.director.getPhysicsManager().gravity = cc.Vec2.ZERO;
     }
 
+    decreseTimer()
+    {
+        if(!this.pauseTime)
+            this.cooldown.string = this.cooldownTime-- + "s";
+    }
+
     start()
     {
+        this.schedule(this.decreseTimer, 1);
         this.jumpbtn.node.on("click", ()=>this.onClick());
         this.prize1.getComponent(sp.Skeleton).animation = GameData.prizeBox;
         this.prize2.getComponent(sp.Skeleton).animation = GameData.prizeBox;
@@ -62,14 +80,21 @@ export default class NewClass extends cc.Component {
 
     update (dt) 
     {
+        if(this.cooldown.string == "0s" && !this.pauseTime)
+        {
+            this.pauseTime = true;
+            this.onClick();
+        }
+
         if(this.jumptime>=0)
         {
             this.jumptime -= dt;
             if(this.jumptime<=0)
             {
                 this.tigerGift.active = true;
-                cc.tween(this.tigerGift).to(0.3,{opacity:255}).start();
+                cc.tween(this.tigerGift).to(0.3,{opacity:255}).call(()=>this.showPrizePopup()).start();
                 this.tiger.animation = "4dile_gift_chopmat";
+                this.pauseTime = true;
             }
             
             if(this.jumptime <=0.8)
@@ -92,4 +117,40 @@ export default class NewClass extends cc.Component {
             // this.wheelClone.children[i].angle = this.wheel.children[i].angle;
         }
     }
+
+    showPrizePopup()
+    {
+        let i = this.getRandomInt(0,3);
+        if(i==0)
+        {
+            largepopup.type = 0;
+            let popup = cc.instantiate(this.largePopup);
+            popup.children[1].scale = 0;
+            cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+            popup.parent = cc.find("Canvas/PopUp");
+        }
+        else if(i==1)
+        {
+            largepopup.type = 1;
+            let popup = cc.instantiate(this.largePopup);
+            popup.children[1].scale = 0;
+            cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+            popup.parent = cc.find("Canvas/PopUp");
+        }
+        else
+        {
+            largepopup.type = 2;
+            let popup = cc.instantiate(this.largePopup);
+            popup.children[1].scale = 0;
+            cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+            popup.parent = cc.find("Canvas/PopUp");
+        }
+    }
+
+    getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
 }
