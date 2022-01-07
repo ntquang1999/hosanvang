@@ -1,0 +1,167 @@
+
+loading.png
+size: 988,1040
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ho2_bantay1
+  rotate: true
+  xy: 641, 364
+  size: 259, 152
+  orig: 261, 154
+  offset: 1, 1
+  index: -1
+ho2_bantay2
+  rotate: false
+  xy: 567, 625
+  size: 224, 199
+  orig: 226, 201
+  offset: 1, 1
+  index: -1
+ho2_canhtay1
+  rotate: true
+  xy: 641, 250
+  size: 112, 181
+  orig: 114, 183
+  offset: 1, 1
+  index: -1
+ho2_canhtay2
+  rotate: true
+  xy: 805, 148
+  size: 99, 179
+  orig: 101, 181
+  offset: 1, 1
+  index: -1
+ho2_chan1
+  rotate: false
+  xy: 412, 104
+  size: 146, 137
+  orig: 146, 137
+  offset: 0, 0
+  index: -1
+ho2_chan2
+  rotate: false
+  xy: 824, 249
+  size: 150, 131
+  orig: 150, 131
+  offset: 0, 0
+  index: -1
+ho2_dau
+  rotate: false
+  xy: 2, 578
+  size: 563, 460
+  orig: 563, 460
+  offset: 0, 0
+  index: -1
+ho2_duoi
+  rotate: false
+  xy: 567, 826
+  size: 251, 212
+  orig: 251, 212
+  offset: 0, 0
+  index: -1
+ho2_longmay
+  rotate: true
+  xy: 337, 26
+  size: 86, 54
+  orig: 89, 56
+  offset: 1, 1
+  index: -1
+ho2_longmay2
+  rotate: false
+  xy: 805, 86
+  size: 70, 60
+  orig: 72, 62
+  offset: 1, 1
+  index: -1
+ho2_mat3
+  rotate: false
+  xy: 2, 2
+  size: 333, 110
+  orig: 335, 112
+  offset: 1, 1
+  index: -1
+ho2_mom1
+  rotate: false
+  xy: 567, 582
+  size: 63, 41
+  orig: 65, 44
+  offset: 1, 1
+  index: -1
+ho2_mom2
+  rotate: true
+  xy: 772, 41
+  size: 118, 31
+  orig: 121, 33
+  offset: 2, 1
+  index: -1
+ho2_mom3
+  rotate: true
+  xy: 715, 17
+  size: 142, 55
+  orig: 144, 57
+  offset: 1, 1
+  index: -1
+ho2_quan1
+  rotate: false
+  xy: 820, 804
+  size: 165, 234
+  orig: 165, 234
+  offset: 0, 0
+  index: -1
+ho2_quan2
+  rotate: false
+  xy: 795, 382
+  size: 154, 243
+  orig: 154, 243
+  offset: 0, 0
+  index: -1
+ho2_rau
+  rotate: false
+  xy: 560, 161
+  size: 243, 87
+  orig: 245, 89
+  offset: 1, 1
+  index: -1
+ho2_tai1
+  rotate: true
+  xy: 560, 11
+  size: 148, 153
+  orig: 155, 159
+  offset: 6, 4
+  index: -1
+ho2_tai2
+  rotate: true
+  xy: 793, 627
+  size: 175, 181
+  orig: 187, 185
+  offset: 1, 2
+  index: -1
+ho2_than
+  rotate: false
+  xy: 2, 114
+  size: 408, 462
+  orig: 408, 462
+  offset: 0, 0
+  index: -1
+ho2_viettellogo
+  rotate: false
+  xy: 877, 108
+  size: 90, 38
+  orig: 92, 40
+  offset: 1, 1
+  index: -1
+mat1
+  rotate: true
+  xy: 412, 243
+  size: 333, 122
+  orig: 335, 124
+  offset: 1, 1
+  index: -1
+mat2
+  rotate: true
+  xy: 536, 250
+  size: 326, 103
+  orig: 326, 103
+  offset: 0, 0
+  index: -1

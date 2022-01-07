@@ -1,3 +1,6 @@
+import APIController from "./APIController";
+import GameData from "./GameData";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -24,6 +27,12 @@ export default class smallpopup extends cc.Component {
     @property(cc.Node)
     confirm: cc.Node = null;
 
+    @property(cc.Node)
+    invite: cc.Node = null;
+
+    @property(cc.Node)
+    ivtConfirm: cc.Node = null;
+
     @property([cc.Node])
     item: cc.Node[] = [];
 
@@ -48,31 +57,51 @@ export default class smallpopup extends cc.Component {
             case 0:
                 {
                     this.onBackClick();
+                    break;
                 }
             case 1:
                 {
                     this.onBackClick();
+                    break;
                 }
             case 2:
                 {
                     this.onBackClick();
+                    break;
                 }
             case 3:
                 {
-                    
-                    cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 1; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
+                    APIController.exchangePoint(smallpopup.turn+"", (err, json)=>{
+                        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 1; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
+                        smallpopup.type = 1;
+                    });                
+                    break;
+                }
+            case 4:
+                {
+                    //call api lantoa
+                    this.onBackClick();
+                    break;
+                }
+            case 5:
+                {
+                    //call api xacnhan
+                    this.onBackClick();
+                    break;
                 }
         }
     }
 
     onBackClick()
     {
+        APIController.getPoint();
         //this.node.children[2].opacity = 0;
         cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>this.node.destroy()).start();     
     }
 
     update(dt)
     {
+        
         switch(smallpopup.type)
         {
             case 0:
@@ -104,6 +133,17 @@ export default class smallpopup extends cc.Component {
                     + " điểm viettel++ lấy " +smallpopup.turn+ " lượt quay";
                     break;
                 }
+            case 4:
+                {
+                    this.invite.active = true;
+                    break;
+                }   
+            case 5:
+                {
+                    this.ivtConfirm.active = true;
+                    break;
+                }     
+            
         }
     }
 }

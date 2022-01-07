@@ -59,7 +59,7 @@ export default class NewClass extends cc.Component {
                 }
         }
 
-        cc.director.loadScene("CatchScene");
+        cc.tween(cc.find("Canvas/Black")).to(0.3,{opacity:255}).call(()=>cc.director.loadScene("CatchScene")).start();
 
     }
 }

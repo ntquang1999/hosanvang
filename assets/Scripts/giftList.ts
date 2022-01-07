@@ -1,3 +1,5 @@
+import GameData from "./GameData";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -6,8 +8,12 @@ export default class NewClass extends cc.Component {
     @property(cc.Button)
     back: cc.Button = null;
 
+    @property(cc.Label)
+    sdt: cc.Label = null;
+
     protected start(): void {
         this.back.node.on("click", ()=>this.onBackClick());
+        this.sdt.string = GameData.phoneNumber;
     }
 
     onBackClick()

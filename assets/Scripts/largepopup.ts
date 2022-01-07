@@ -50,7 +50,7 @@ export default class largepopup extends cc.Component {
     {
         if(largepopup.type != 3)
         {
-            cc.tween(cc.find("Canvas")).to(0.8,{opacity:0}, {easing: cc.easing.backIn}).call(()=>cc.director.loadScene("MainScene")).start();
+            cc.tween(cc.find("Canvas/Black")).to(0.3,{opacity:255}).call(()=>cc.director.loadScene("MainScene")).start();
             
             this.node.destroy();
         }
@@ -63,6 +63,7 @@ export default class largepopup extends cc.Component {
             case 0:
                 {
                     this.voucher.active = true;
+                    this.voucherLB.string = largepopup.voucherText;
                     break;
                 }
             case 1:

@@ -1,3 +1,4 @@
+import APIController from "./APIController";
 import GameData from "./GameData";
 
 const {ccclass, property} = cc._decorator;
@@ -15,12 +16,26 @@ export default class NewClass extends cc.Component {
     back: cc.Button = null;
 
     protected start(): void {
-        for(let i =0;i<10;i++)
+        if(GameData.isAuthed)
         {
-            console.log("zz " + i);
-            this.number[i].string = GameData.rankList[i].id;
-            this.count[i].string = GameData.rankList[i].giftCount + "";
+            APIController.rollHistory((err,json)=>{
+                //GameData.rankList.length = 0;
+                console.log(json);
+                let i = 0;
+                json["data"]["gold_table_v3"].forEach(element => {
+                    GameData.rankList[i] = {"id": "0" + element["username"].substring(2), "giftCount": element["point"]};
+                    i++;
+                });      
+                for(let i =0;i<10;i++)
+                {
+                    {
+                        this.number[i].string = GameData.rankList[i].id;
+                        this.count[i].string = GameData.rankList[i].giftCount + "";
+                    }   
+                }
+            });
         }
+        
         this.back.node.on("click", ()=>this.onBackClick());
     }
 

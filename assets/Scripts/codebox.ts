@@ -1,3 +1,5 @@
+import APIController from "./APIController";
+import historypopup from "./historypopup";
 import smallpopup from "./Smallpopup";
 
 const {ccclass, property} = cc._decorator;
@@ -23,16 +25,31 @@ export default class codeBox extends cc.Component {
     @property(cc.Button)
     copyBtn: cc.Button = null;
 
+    @property(cc.Button)
+    receiveBtn: cc.Button = null;
+
     @property(cc.Prefab)
     smallpopup: cc.Prefab = null;
 
+
+    id: number = 0;
     codetype: number = 0;
     codeString: string = "NULL";
     timeString: string = "NULL";
+    voucherString: string = "NULL";
+    status: number = 0;
 
     protected start(): void {
 
         this.copyBtn.node.on("click", ()=> this.onCopyClick());
+        this.receiveBtn.node.on("click", ()=> this.onReceiveClick());
+    }
+
+    onReceiveClick()
+    {
+        APIController.getVoucher(this.id+"", (err,json)=>{
+            cc.find("Canvas/PopUp/HistoryPopup").getComponent(historypopup).refreshData();
+        });
     }
 
 
@@ -43,11 +60,20 @@ export default class codeBox extends cc.Component {
         popup.children[1].scale = 0;
         cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
         popup.parent = cc.find("Canvas/PopUp");
-        codeBox.copyTextToClipboard(this.code.string);
+        codeBox.copyTextToClipboard(this.voucherString);
     }
 
 
     protected update(dt: number): void {
+        if(this.status == 0)
+        {
+            this.receiveBtn.node.active = true;
+            this.copyBtn.node.active = false;
+        } else
+        {
+            this.receiveBtn.node.active = false;
+            this.copyBtn.node.active = true;
+        }
         if(this.codetype == 0)
         {
             this.shopee.active = true;

@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import APIController from "./APIController";
 import GameData from "./GameData";
 import largepopup from "./largepopup";
 import smallpopup from "./Smallpopup";
@@ -12,7 +13,9 @@ import smallpopup from "./Smallpopup";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class MainScene extends cc.Component {
+
+    
 
     @property([cc.Node])
     spawn: cc.Node[] = [];
@@ -58,6 +61,18 @@ export default class NewClass extends cc.Component {
     @property(cc.Button)
     historyBtn: cc.Button = null;
 
+    @property(cc.Button)
+    inviteBtn: cc.Button = null;
+
+    @property(cc.Button)
+    ivtConfirmBtn: cc.Button = null;
+
+    @property(cc.Button)
+    muteBtn: cc.Button = null;
+
+    @property(cc.Button)
+    unmuteBtn: cc.Button = null;
+
     @property(cc.Prefab)
     historyPopup: cc.Prefab = null;
 
@@ -94,24 +109,85 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     huntTurnComp: cc.Node = null;
 
+    @property(cc.Node)
+    timebox: cc.Node = null;
+
     playing: boolean = false;
 
     pos: number[] = [-1,-1,-1,-1];
 
     timer: number[] = [-0.5,-0.5,-0.5,-0.5];
 
-    cooldownTime: number = 60;
+    cooldownTime: number = 59;
+
+    protected onLoad(): void {
+        APIController.oauth();
+                  
+    }
+
+    static apiCall(i: number)
+    {
+        if(GameData.isAuthed)
+        {
+            switch(i)
+            {     
+                case 0:
+                    APIController.getTurn(true);
+                    break;
+                case 1:
+                    APIController.getPoint();
+                    break;
+                case 2:
+                    APIController.getListVoucher((err, json)=>{
+                        //console.log(json); 
+                        GameData.phoneNumber = "0" + json["data"][0]["msisdn"].substring(2); 
+                        APIController.checkFirstTimeLogin();    
+                    });
+                    break;
+            }
+        }
+            
+    }
 
     start()
     {
+        APIController.getListVoucher
         this.playBtn.node.on("click", ()=>this.onPlayClick());
         this.rankBtn.node.on("click", ()=>this.onRankClick());
         this.ruleBtn.node.on("click", ()=>this.onRuleClick());  
         this.historyBtn.node.on("click", ()=>this.onHistoryClick());   
         this.shopBtn.node.on("click", ()=>this.onShopClick()); 
         this.giftListBtn.node.on("click", ()=>this.onGiftListClick());  
+        this.inviteBtn.node.on("click", ()=>this.onInviteClick()); 
+        this.ivtConfirmBtn.node.on("click", ()=>this.onIvtConfirmClick()); 
+        this.muteBtn.node.on("click", ()=>{
+            this.unmuteBtn.node.active = true;
+            this.muteBtn.node.active = false;
+        }); 
+        this.unmuteBtn.node.on("click", ()=>{
+            this.unmuteBtn.node.active = false;
+            this.muteBtn.node.active = true;
+        }); 
         GameData.generateData();   
-        this.huntTurn.string = GameData.huntTurn + "";
+        
+    }
+    onInviteClick()
+    {
+        smallpopup.type = 4;
+        let popup = cc.instantiate(this.smallpopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = this.popupParent;
+    }
+
+    onIvtConfirmClick()
+    {
+        smallpopup.type = 5;
+        let popup = cc.instantiate(this.smallpopup);
+        popup.children[1].scale = 0;
+        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+        popup.parent = this.popupParent;
+        this.ivtConfirmBtn.node.active = false;
     }
 
     decreseTimer()
@@ -129,6 +205,7 @@ export default class NewClass extends cc.Component {
         this.buttons.active = false;
         //this.tigerIdle.active = false;
         cc.tween(this.tigerIdle).to(0.3,{opacity:0}).call(()=>this.tigerIdle.active = false).start();
+        cc.tween(this.timebox).to(0.3,{opacity:255}).start();
         this.schedule(this.decreseTimer, 1);
     }
 
@@ -174,6 +251,11 @@ export default class NewClass extends cc.Component {
 
     update(dt)
     {
+        this.huntTurn.string = GameData.huntTurn + "";
+        if(GameData.huntTurn <= 0)
+        {
+            this.playBtn.interactable = false;
+        }
         if(this.cooldown.string == "0s")
             cc.director.loadScene("MainScene");
         if(this.playing)

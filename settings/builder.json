@@ -1,10 +1,8 @@
 {
   "title": "HoSanVang",
   "packageName": "org.cocos2d.demo",
-  "startScene": "28f2fc72-c875-4be9-a791-787a817340d4",
-  "excludeScenes": [
-    "e5c91bc8-a1b5-46a8-b93d-bf5f8e8c9c6e"
-  ],
+  "startScene": "9eafc676-d7c2-4a0d-93bd-49173851728e",
+  "excludeScenes": [],
   "orientation": {
     "landscapeRight": true,
     "landscapeLeft": true,

@@ -63,6 +63,7 @@ export default class CatchScene extends cc.Component {
     jumpTimer: number = 1.8;
     convertTimer: number = 0.33;
     sceneTimer: number = 2.5;
+    ended: boolean = false;
 
     onLoad()
     {
@@ -122,9 +123,16 @@ export default class CatchScene extends cc.Component {
     update(dt)
     {
         this.sceneTimer -= dt;
-        if(this.sceneTimer<=0)
+        
+        if(this.sceneTimer <= 0.4 && this.tiger.animation != "5walk")
         {
-            cc.director.loadScene("PickScene");
+            this.tiger.animation = "5walk";
+        }
+
+        if(this.sceneTimer<=0 && !this.ended)
+        {
+            this.ended = true;
+            cc.tween(cc.find("Canvas/Black")).to(0.3,{opacity:255}).call(()=>cc.director.loadScene("PickScene")).start();
         }
 
         if(this.catching)
@@ -139,7 +147,7 @@ export default class CatchScene extends cc.Component {
                     this.prey.getComponent(sp.Skeleton).animation = "2convert";
                     this.giftFake.active = false;
                     this.giftRealNode.active = true;
-                    this.giftRealNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(-600,1300);
+                    this.giftRealNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(-300,1300);
                 }
                 else
                 {
@@ -158,7 +166,7 @@ export default class CatchScene extends cc.Component {
             if(this.jumpTimer<=0)
             {
                 this.catching = false;
-                this.tiger.animation = "1dile_dung_chopmat"
+                this.tiger.animation = "1dile_dung_chopmat";
             }
         }
 
@@ -168,6 +176,11 @@ export default class CatchScene extends cc.Component {
             this.heo.x+=8;
             this.tho.x+=8;
             this.meo.x+=8;
+        }
+
+        if(this.tiger.animation == "5walk")
+        {
+            this.tigerNode.x+=4;
         }
     }
 }
