@@ -29,10 +29,15 @@ export default class NewClass extends cc.Component {
         this.codeContentBox.destroyAllChildren();
         APIController.getListVoucher((err,json)=>{
             json["data"].forEach(element => {
-                let type: number = 0;
+                let type: number = 13;
                 let voucher: string = "NOTAVAILABLE";
                 //Set type via code
-                
+                GameData.APIList.forEach(APIelement => {
+                    if(APIelement.code == element["giftCode"])
+                    {
+                        type = APIelement.type;
+                    }
+                });
                 if(element["status"] == 1)
                     voucher = element["voucherData"]["code"];
                 
@@ -50,6 +55,7 @@ export default class NewClass extends cc.Component {
                 node.getComponent(codeBox).voucherString = GameData.codeList[i].voucher;
                 node.getComponent(codeBox).id = GameData.codeList[i].id;
             }
+            cc.find("loading").active = false;
         });
     }
 

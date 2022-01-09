@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import APIController from "./APIController";
+import AudioController from "./AudioController";
 import GameData from "./GameData";
 import largepopup from "./largepopup";
 import smallpopup from "./Smallpopup";
@@ -90,6 +91,9 @@ export default class MainScene extends cc.Component {
 
     @property(cc.Button)
     giftListBtn: cc.Button = null;
+    
+    @property(cc.Button)
+    share: cc.Button = null;
 
     @property(cc.Prefab)
     giftListPopup: cc.Prefab = null;
@@ -112,6 +116,9 @@ export default class MainScene extends cc.Component {
     @property(cc.Node)
     timebox: cc.Node = null;
 
+    @property(cc.Node)
+    loadingIcon: cc.Node = null;
+
     playing: boolean = false;
 
     pos: number[] = [-1,-1,-1,-1];
@@ -120,38 +127,9 @@ export default class MainScene extends cc.Component {
 
     cooldownTime: number = 59;
 
-    protected onLoad(): void {
-        APIController.oauth();
-                  
-    }
-
-    static apiCall(i: number)
-    {
-        if(GameData.isAuthed)
-        {
-            switch(i)
-            {     
-                case 0:
-                    APIController.getTurn(true);
-                    break;
-                case 1:
-                    APIController.getPoint();
-                    break;
-                case 2:
-                    APIController.getListVoucher((err, json)=>{
-                        //console.log(json); 
-                        GameData.phoneNumber = "0" + json["data"][0]["msisdn"].substring(2); 
-                        APIController.checkFirstTimeLogin();    
-                    });
-                    break;
-            }
-        }
-            
-    }
-
     start()
     {
-        APIController.getListVoucher
+        //APIController.getListVoucher
         this.playBtn.node.on("click", ()=>this.onPlayClick());
         this.rankBtn.node.on("click", ()=>this.onRankClick());
         this.ruleBtn.node.on("click", ()=>this.onRuleClick());  
@@ -163,14 +141,25 @@ export default class MainScene extends cc.Component {
         this.muteBtn.node.on("click", ()=>{
             this.unmuteBtn.node.active = true;
             this.muteBtn.node.active = false;
+            cc.audioEngine.pause(0);
         }); 
         this.unmuteBtn.node.on("click", ()=>{
             this.unmuteBtn.node.active = false;
             this.muteBtn.node.active = true;
+            cc.audioEngine.resume(0);
         }); 
+        this.ivtConfirmBtn.node.on("click", ()=>{
+            cc.sys.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        });
         GameData.generateData();   
         
     }
+
+    showLoading(i: boolean)
+    {
+        this.loadingIcon.active = i;
+    }
+
     onInviteClick()
     {
         smallpopup.type = 4;
@@ -187,7 +176,7 @@ export default class MainScene extends cc.Component {
         popup.children[1].scale = 0;
         cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
         popup.parent = this.popupParent;
-        this.ivtConfirmBtn.node.active = false;
+        
     }
 
     decreseTimer()
@@ -211,6 +200,7 @@ export default class MainScene extends cc.Component {
 
     onRankClick()
     {
+        this.showLoading(true);
         let popup = cc.instantiate(this.rankPopup);
         popup.children[1].scale = 0;
         cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
@@ -219,14 +209,23 @@ export default class MainScene extends cc.Component {
 
     onRuleClick()
     {
-        let popup = cc.instantiate(this.rulePopup);
-        popup.children[1].scale = 0;
-        cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
-        popup.parent = this.popupParent;
+        if(GameData.isAuthed)
+        {
+            this.showLoading(true);
+            APIController.rule((err,json)=>{
+                this.showLoading(false);
+                GameData.rule = json["data"]["content"];
+                let popup = cc.instantiate(this.rulePopup);
+                popup.children[1].scale = 0;
+                cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+                popup.parent = this.popupParent;
+            });
+        }    
     }
 
     onHistoryClick()
     {
+        this.showLoading(true);
         let popup = cc.instantiate(this.historyPopup);
         popup.children[1].scale = 0;
         cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
@@ -251,6 +250,7 @@ export default class MainScene extends cc.Component {
 
     update(dt)
     {
+        if(GameData.ivtconfirmed) this.ivtConfirmBtn.node.active = false;
         this.huntTurn.string = GameData.huntTurn + "";
         if(GameData.huntTurn <= 0)
         {

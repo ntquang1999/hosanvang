@@ -27,17 +27,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 78
+        "__id__": 75
       },
       {
-        "__id__": 79
+        "__id__": 76
       },
       {
-        "__id__": 80
+        "__id__": 77
       }
     ],
     "_prefab": {
-      "__id__": 81
+      "__id__": 78
     },
     "_opacity": 255,
     "_color": {
@@ -244,19 +244,19 @@
         "__id__": 18
       },
       {
-        "__id__": 35
+        "__id__": 32
       },
       {
-        "__id__": 55
+        "__id__": 52
       },
       {
-        "__id__": 66
+        "__id__": 63
       }
     ],
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 77
+      "__id__": 74
     },
     "_opacity": 255,
     "_color": {
@@ -791,15 +791,12 @@
       },
       {
         "__id__": 28
-      },
-      {
-        "__id__": 31
       }
     ],
     "_active": false,
     "_components": [],
     "_prefab": {
-      "__id__": 34
+      "__id__": 31
     },
     "_opacity": 255,
     "_color": {
@@ -1089,8 +1086,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
-      "height": 542
+      "width": 615,
+      "height": 543
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1101,7 +1098,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        2.081,
+        -44.15,
         -298.129,
         0,
         0,
@@ -1142,7 +1139,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d195bf90-ed4c-4c1d-9299-39250fe39663"
+      "__uuid__": "2eba8bef-e214-4fd8-9cd6-073392814312"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -1171,7 +1168,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Vocccucher",
+    "_name": "VoucherLabel",
     "_objFlags": 0,
     "_parent": {
       "__id__": 18
@@ -1185,113 +1182,6 @@
     ],
     "_prefab": {
       "__id__": 30
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 218,
-      "height": 42
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        5.295,
-        -426.652,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 28
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "1681421c-75c2-45d5-bd70-9eaa3112dd6e"
-    },
-    "_type": 0,
-    "_sizeMode": 1,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__id__": 0
-    },
-    "fileId": "78M3eCYTJIYZieJJj/FeBg",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "VoucherLabel",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 18
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 32
-      }
-    ],
-    "_prefab": {
-      "__id__": 33
     },
     "_opacity": 255,
     "_color": {
@@ -1315,7 +1205,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        7.159,
+        -14.597,
         -136.562,
         0,
         0,
@@ -1345,7 +1235,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 31
+      "__id__": 28
     },
     "_enabled": true,
     "_materials": [
@@ -1404,6 +1294,9 @@
     },
     "_children": [
       {
+        "__id__": 33
+      },
+      {
         "__id__": 36
       },
       {
@@ -1417,15 +1310,12 @@
       },
       {
         "__id__": 48
-      },
-      {
-        "__id__": 51
       }
     ],
     "_active": false,
     "_components": [],
     "_prefab": {
-      "__id__": 54
+      "__id__": 51
     },
     "_opacity": 255,
     "_color": {
@@ -1479,17 +1369,17 @@
     "_name": "CHÚC MỪNG",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 35
+      "__id__": 32
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 37
+        "__id__": 34
       }
     ],
     "_prefab": {
-      "__id__": 38
+      "__id__": 35
     },
     "_opacity": 255,
     "_color": {
@@ -1543,7 +1433,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 36
+      "__id__": 33
     },
     "_enabled": true,
     "_materials": [
@@ -1586,17 +1476,17 @@
     "_name": "Quý khách đã nhận được",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 35
+      "__id__": 32
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 40
+        "__id__": 37
       }
     ],
     "_prefab": {
-      "__id__": 41
+      "__id__": 38
     },
     "_opacity": 255,
     "_color": {
@@ -1650,7 +1540,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 39
+      "__id__": 36
     },
     "_enabled": true,
     "_materials": [
@@ -1693,17 +1583,17 @@
     "_name": "lucky envelop-01 1",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 35
+      "__id__": 32
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 43
+        "__id__": 40
       }
     ],
     "_prefab": {
-      "__id__": 44
+      "__id__": 41
     },
     "_opacity": 255,
     "_color": {
@@ -1757,7 +1647,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 42
+      "__id__": 39
     },
     "_enabled": true,
     "_materials": [
@@ -1800,17 +1690,17 @@
     "_name": "Rectangle 98",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 35
+      "__id__": 32
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 46
+        "__id__": 43
       }
     ],
     "_prefab": {
-      "__id__": 47
+      "__id__": 44
     },
     "_opacity": 255,
     "_color": {
@@ -1864,7 +1754,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 45
+      "__id__": 42
     },
     "_enabled": true,
     "_materials": [
@@ -1907,17 +1797,17 @@
     "_name": "TicketLabel",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 35
+      "__id__": 32
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 49
+        "__id__": 46
       }
     ],
     "_prefab": {
-      "__id__": 50
+      "__id__": 47
     },
     "_opacity": 255,
     "_color": {
@@ -1971,7 +1861,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 48
+      "__id__": 45
     },
     "_enabled": true,
     "_materials": [
@@ -2015,17 +1905,17 @@
     "_name": "Mã Dự Thưởddddng",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 35
+      "__id__": 32
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 52
+        "__id__": 49
       }
     ],
     "_prefab": {
-      "__id__": 53
+      "__id__": 50
     },
     "_opacity": 255,
     "_color": {
@@ -2079,7 +1969,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 51
+      "__id__": 48
     },
     "_enabled": true,
     "_materials": [
@@ -2137,19 +2027,19 @@
     },
     "_children": [
       {
+        "__id__": 53
+      },
+      {
         "__id__": 56
       },
       {
         "__id__": 59
-      },
-      {
-        "__id__": 62
       }
     ],
     "_active": false,
     "_components": [],
     "_prefab": {
-      "__id__": 65
+      "__id__": 62
     },
     "_opacity": 255,
     "_color": {
@@ -2203,17 +2093,17 @@
     "_name": "RẤT TIẾC copy",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 55
+      "__id__": 52
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 57
+        "__id__": 54
       }
     ],
     "_prefab": {
-      "__id__": 58
+      "__id__": 55
     },
     "_opacity": 255,
     "_color": {
@@ -2267,7 +2157,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 56
+      "__id__": 53
     },
     "_enabled": true,
     "_materials": [
@@ -2310,17 +2200,17 @@
     "_name": "Hệ thống đã xảy ra lỗi bất ngờ",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 55
+      "__id__": 52
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 60
+        "__id__": 57
       }
     ],
     "_prefab": {
-      "__id__": 61
+      "__id__": 58
     },
     "_opacity": 255,
     "_color": {
@@ -2374,7 +2264,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 59
+      "__id__": 56
     },
     "_enabled": true,
     "_materials": [
@@ -2417,17 +2307,17 @@
     "_name": "Grddddoup",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 55
+      "__id__": 52
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 63
+        "__id__": 60
       }
     ],
     "_prefab": {
-      "__id__": 64
+      "__id__": 61
     },
     "_opacity": 255,
     "_color": {
@@ -2481,7 +2371,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 62
+      "__id__": 59
     },
     "_enabled": true,
     "_materials": [
@@ -2539,19 +2429,19 @@
     },
     "_children": [
       {
+        "__id__": 64
+      },
+      {
         "__id__": 67
       },
       {
         "__id__": 70
-      },
-      {
-        "__id__": 73
       }
     ],
     "_active": false,
     "_components": [],
     "_prefab": {
-      "__id__": 76
+      "__id__": 73
     },
     "_opacity": 255,
     "_color": {
@@ -2605,17 +2495,17 @@
     "_name": "RẤT TIẾC",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 66
+      "__id__": 63
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 68
+        "__id__": 65
       }
     ],
     "_prefab": {
-      "__id__": 69
+      "__id__": 66
     },
     "_opacity": 255,
     "_color": {
@@ -2669,7 +2559,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 67
+      "__id__": 64
     },
     "_enabled": true,
     "_materials": [
@@ -2712,17 +2602,17 @@
     "_name": "lucky envelop-03 1",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 66
+      "__id__": 63
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 71
+        "__id__": 68
       }
     ],
     "_prefab": {
-      "__id__": 72
+      "__id__": 69
     },
     "_opacity": 255,
     "_color": {
@@ -2776,7 +2666,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 70
+      "__id__": 67
     },
     "_enabled": true,
     "_materials": [
@@ -2816,33 +2706,33 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Hộp quà trống rỗng Quý khách nhận được 5 xu vàng",
+    "_name": "New Label",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 66
+      "__id__": 63
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 74
+        "__id__": 71
       }
     ],
     "_prefab": {
-      "__id__": 75
+      "__id__": 72
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 150,
+      "g": 73,
+      "b": 73,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 486,
-      "height": 179
+      "width": 716,
+      "height": 239
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2853,8 +2743,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        120.921,
+        9,
+        130,
         0,
         0,
         0,
@@ -2879,11 +2769,11 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 73
+      "__id__": 70
     },
     "_enabled": true,
     "_materials": [
@@ -2893,21 +2783,24 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "9436ae54-bac7-49f9-9be6-426fd04d6b54"
+    "_string": "Chúc quý khách may mắn lần sau!",
+    "_N$string": "Chúc quý khách may mắn lần sau!",
+    "_fontSize": 70,
+    "_lineHeight": 70,
+    "_enableWrapText": true,
+    "_N$file": {
+      "__uuid__": "c195948a-c40d-4103-aa25-242b5dced85e"
     },
-    "_type": 0,
-    "_sizeMode": 1,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
+    "_isSystemFontUsed": false,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 0,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 1,
+    "_N$cacheMode": 0,
     "_id": ""
   },
   {
@@ -2918,7 +2811,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "1aSoPV4TBDOI614/na36MV",
+    "fileId": "72wAlfRrxL1LVQPmkM3D/D",
     "sync": false
   },
   {
@@ -2998,19 +2891,19 @@
       "__id__": 18
     },
     "ticket": {
-      "__id__": 35
-    },
-    "error": {
-      "__id__": 55
-    },
-    "empty": {
-      "__id__": 66
-    },
-    "voucherLB": {
       "__id__": 32
     },
+    "error": {
+      "__id__": 52
+    },
+    "empty": {
+      "__id__": 63
+    },
+    "voucherLB": {
+      "__id__": 29
+    },
     "ticketLB": {
-      "__id__": 49
+      "__id__": 46
     },
     "emptyLB": null,
     "_id": ""

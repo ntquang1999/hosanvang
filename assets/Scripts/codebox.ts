@@ -31,6 +31,9 @@ export default class codeBox extends cc.Component {
     @property(cc.Prefab)
     smallpopup: cc.Prefab = null;
 
+    @property([cc.Node])
+    icon: cc.Node[] = [];
+
 
     id: number = 0;
     codetype: number = 0;
@@ -74,33 +77,11 @@ export default class codeBox extends cc.Component {
             this.receiveBtn.node.active = false;
             this.copyBtn.node.active = true;
         }
-        if(this.codetype == 0)
-        {
-            this.shopee.active = true;
-            this.tiki.active = false;
-            this.laz.active = false;
-            this.code.string = this.codeString;
-            this.time.string = this.timeString;
-        } else 
-        if(this.codetype == 1)
-        {
-            this.shopee.active = false;
-            this.tiki.active = true;
-            this.laz.active = false;
-            this.code.string = this.codeString;
-            this.time.string = this.timeString;
-        } else
-        if(this.codetype == 2)
-        {
-            this.shopee.active = false;
-            this.tiki.active = false;
-            this.laz.active = true;
-            this.code.string = this.codeString;
-            this.time.string = this.timeString;
-        }
-
-
+        this.code.string = this.codeString;
+        this.time.string = this.timeString; 
         
+        this.icon[this.codetype].active = true;
+   
     }
 
     private static fallbackCopyTextToClipboard(text: string) {

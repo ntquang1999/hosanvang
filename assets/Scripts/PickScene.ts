@@ -43,6 +43,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     largePopup: cc.Prefab = null;
 
+    @property(cc.Node)
+    loading: cc.Node = null;
+
     pauseTime: boolean = false;
 
     cooldownTime: number = 19;
@@ -124,10 +127,22 @@ export default class NewClass extends cc.Component {
         let i = 0;
         if(i==0)
         {
+            this.loading.active = true;
             APIController.roll((err,json)=>{
-                largepopup.voucherText = json["data"]["code"];
-                GameData.huntTurn = json["data"]["total_turn"];
-                largepopup.type = 0;
+                this.loading.active = false;
+                console.log(json["data"]);
+                if(json["data"]["code"] == "LUCKY")
+                {
+                    largepopup.type = 2;
+                    GameData.huntTurn = json["data"]["total_turn"];
+                }
+                else
+                {
+                    largepopup.voucherText = json["data"]["desc"];
+                    GameData.huntTurn = json["data"]["total_turn"];
+                    largepopup.type = 0;
+                }
+                
                 let popup = cc.instantiate(this.largePopup);
                 popup.children[1].scale = 0;
                 cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();

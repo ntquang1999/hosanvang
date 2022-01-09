@@ -39,7 +39,7 @@ export default class NewClass extends cc.Component {
 
     onBackClick()
     {
-        APIController.getTurn(false);
+        APIController.getTurn((err,json)=>{});
         //this.node.children[2].opacity = 0;
         cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>this.node.destroy()).start();     
     }

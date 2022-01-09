@@ -147,7 +147,7 @@ export default class CatchScene extends cc.Component {
                     this.prey.getComponent(sp.Skeleton).animation = "2convert";
                     this.giftFake.active = false;
                     this.giftRealNode.active = true;
-                    this.giftRealNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(-300,1300);
+                    this.giftRealNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(-200,1300);
                 }
                 else
                 {

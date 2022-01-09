@@ -1,4 +1,5 @@
 import GameData from "./GameData";
+import loading from "./loading";
 import MainScene from "./MainScene";
 import { Http } from "./Util.Http";
 
@@ -9,39 +10,43 @@ export default class APIController {
     //static data: string = "2bmrcgxcc2kvartwn61635414941058";
     static data: string = "2bmrcgxcc2kvarti821635414922369";
     static token: string = null;
-    static oauth()
+    
+    static oauth(onFinished: (err: any, json: any) => void)
     {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/OAuth", {"data": this.data, "programCode": "HOVANG2022", "command": "OAuth"}, (err,json)=>{
             if(!err)
             {
-                
-                console.log(json["data"]["accessToken"]);
+                if(json == null)
+                {
+                    cc.find("Canvas").getComponent(loading).showError();
+                }
+                //console.log(err);
                 this.token = json["data"]["accessToken"];
                 GameData.isAuthed = true;
-                MainScene.apiCall(0);
+                onFinished(err, json);
             }
+            else console.log(err);
         });
     }
 
-    static getTurn(continues: boolean)
+    static getTurn(onFinished: (err: any, json: any) => void)
     {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/getTurn", {"programCode": "HOVANG2022", "command": "getTurn"}, (err,json)=>{
             if(!err)
             {             
                 GameData.huntTurn = json["data"]["turn"];
-                if(continues)
-                    MainScene.apiCall(1);
+                onFinished(err, json);
             }
         }, {"Authorization": "Bearer " + APIController.token});
     }
 
-    static getPoint()
+    static getPoint(onFinished: (err: any, json: any) => void)
     {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/getListCode", {"programCode": "HOVANG2022", "command": "getListCode"}, (err,json)=>{
             if(!err)
             {             
                 GameData.viettelPoint = json["data"]["totalPoint"];
-                MainScene.apiCall(2);
+                onFinished(err, json);
             }
         }, {"Authorization": "Bearer " + APIController.token});
     }
@@ -69,13 +74,13 @@ export default class APIController {
         }, {"Authorization": "Bearer " + APIController.token})
     }
 
-    static rule()
+    static rule(onFinished: (err: any, json: any) => void)
     {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/rule", {"data": this.data, "programCode": "HOVANG2022", "command": "rule"}, (err,json)=>{
             if(!err)
             {
-                //console.log(json["data"]["turn"]);
-            
+                
+                onFinished(err, json);
                 
             }
         }, {"Authorization": "Bearer " + this.token})
@@ -114,5 +119,25 @@ export default class APIController {
     static checkFirstTimeLogin()
     {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/checkFirstTimeLogin", {"programCode": "HOVANG2022", "command": "checkFirstTimeLogin"}, (err,json)=>{}, {"Authorization": "Bearer " + APIController.token});
+    }
+
+    static invite(sdt: string, onFinished: (err: any, json: any) => void)
+    {
+        Http.post("https://apiv3.viettel.vn/cgvtapiv2/addFriend", {"programCode": "HOVANG2022", "command": "addFriend", "frsMsisdn": sdt}, (err,json)=>{
+            if(!err)
+            {             
+                onFinished(err, json);
+            }
+        }, {"Authorization": "Bearer " + APIController.token});
+    }
+
+    static confirmIvt(sdt: string, onFinished: (err: any, json: any) => void)
+    {
+        Http.post("https://apiv3.viettel.vn/cgvtapiv2/plusTurnV3", {"programCode": "HOVANG2022", "command": "plusTurnV3", "type": "2", "reason": "lantoa", "msisdn": sdt}, (err,json)=>{
+            if(!err)
+            {             
+                onFinished(err, json);
+            }
+        }, {"Authorization": "Bearer " + APIController.token});
     }
 }

@@ -1,5 +1,6 @@
 import APIController from "./APIController";
 import GameData from "./GameData";
+import MainScene from "./MainScene";
 
 const {ccclass, property} = cc._decorator;
 
@@ -20,7 +21,7 @@ export default class NewClass extends cc.Component {
         {
             APIController.rollHistory((err,json)=>{
                 //GameData.rankList.length = 0;
-                console.log(json);
+                //console.log(json);
                 let i = 0;
                 json["data"]["gold_table_v3"].forEach(element => {
                     GameData.rankList[i] = {"id": "0" + element["username"].substring(2), "giftCount": element["point"]};
@@ -33,6 +34,7 @@ export default class NewClass extends cc.Component {
                         this.count[i].string = GameData.rankList[i].giftCount + "";
                     }   
                 }
+                cc.find("Canvas").getComponent(MainScene).showLoading(false);
             });
         }
         

@@ -1,5 +1,6 @@
 import APIController from "./APIController";
 import GameData from "./GameData";
+import MainScene from "./MainScene";
 
 const {ccclass, property} = cc._decorator;
 
@@ -25,6 +26,9 @@ export default class smallpopup extends cc.Component {
     informCopied: cc.Node = null;
 
     @property(cc.Node)
+    info: cc.Node = null;
+
+    @property(cc.Node)
     confirm: cc.Node = null;
 
     @property(cc.Node)
@@ -39,6 +43,14 @@ export default class smallpopup extends cc.Component {
     @property(cc.Label)
     confirmLB: cc.Label = null;
 
+    @property(cc.Label)
+    sdtInviteLB: cc.Label = null;
+
+    @property(cc.Label)
+    sdtConfirmLB: cc.Label = null;
+
+    @property(cc.Label)
+    infoLB: cc.Label = null;
 
     static type: number = 0;
     static point: number = 95;
@@ -71,21 +83,56 @@ export default class smallpopup extends cc.Component {
                 }
             case 3:
                 {
+                    cc.find("Canvas").getComponent(MainScene).showLoading(true);
                     APIController.exchangePoint(smallpopup.turn+"", (err, json)=>{
+                        cc.find("Canvas").getComponent(MainScene).showLoading(false);
                         cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 1; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
-                        smallpopup.type = 1;
                     });                
                     break;
                 }
             case 4:
                 {
-                    //call api lantoa
-                    this.onBackClick();
+                    let sdt: string;
+                    if(this.sdtInviteLB.string.substring(0,2) == "84") 
+                    {
+                        sdt = this.sdtInviteLB.string;
+                    }
+                    else
+                    {
+                        sdt = "84" + this.sdtInviteLB.string.substring(1);
+                    }
+                    console.log(sdt);
+                    cc.find("Canvas").getComponent(MainScene).showLoading(true);
+                    APIController.invite(sdt, (err, json)=>{
+                        cc.find("Canvas").getComponent(MainScene).showLoading(false);
+                        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 6; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
+                        this.infoLB.string = json["message"];
+                    }); 
                     break;
                 }
             case 5:
                 {
-                    //call api xacnhan
+                    let sdt: string;
+                    if(this.sdtInviteLB.string.substring(0,2) == "84") 
+                    {
+                        sdt = this.sdtInviteLB.string;
+                    }
+                    else
+                    {
+                        sdt = "84" + this.sdtConfirmLB.string.substring(1);
+                    }
+                    console.log(sdt);
+                    cc.find("Canvas").getComponent(MainScene).showLoading(true);
+                    APIController.confirmIvt(sdt, (err, json)=>{
+                        cc.find("Canvas").getComponent(MainScene).showLoading(false);
+                        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 6; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
+                        if(json["errorCode"] == 0) GameData.ivtconfirmed = true;
+                        this.infoLB.string = json["message"];
+                    }); 
+                    break;
+                }
+            case 6:
+                {
                     this.onBackClick();
                     break;
                 }
@@ -94,7 +141,10 @@ export default class smallpopup extends cc.Component {
 
     onBackClick()
     {
-        APIController.getPoint();
+        cc.find("Canvas").getComponent(MainScene).showLoading(true);
+        APIController.getPoint((err,json)=>{
+            cc.find("Canvas").getComponent(MainScene).showLoading(false);
+        });
         //this.node.children[2].opacity = 0;
         cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>this.node.destroy()).start();     
     }
@@ -142,7 +192,14 @@ export default class smallpopup extends cc.Component {
                 {
                     this.ivtConfirm.active = true;
                     break;
-                }     
+                }
+            case 6:
+                {
+                    this.invite.active = false;
+                    this.ivtConfirm.active = false;
+                    this.info.active = true;
+                    break;
+                }        
             
         }
     }
