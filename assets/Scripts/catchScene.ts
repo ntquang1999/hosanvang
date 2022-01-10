@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import AudioController from "./AudioController";
 import GameData from "./GameData";
 
 const {ccclass, property} = cc._decorator;
@@ -109,15 +110,9 @@ export default class CatchScene extends cc.Component {
 
     start()
     {
-        //this.catch.node.on("click", ()=>this.onClick());
-        this.onClick();
-    }
-
-    onClick()
-    {
         this.catching = true;
         this.tiger.animation = "5grap";
-
+        cc.find("AudioController").getComponent(AudioController).playTiger();
     }
 
     update(dt)
@@ -144,6 +139,7 @@ export default class CatchScene extends cc.Component {
                 this.tigerNode.x+=10;
                 if(this.prey.getComponent(sp.Skeleton).animation != "2convert" && !this.running)
                 {
+                    cc.find("AudioController").getComponent(AudioController).playPrey();
                     this.prey.getComponent(sp.Skeleton).animation = "2convert";
                     this.giftFake.active = false;
                     this.giftRealNode.active = true;

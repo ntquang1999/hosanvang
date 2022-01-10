@@ -1,5 +1,6 @@
 import APIController from "./APIController";
 import historypopup from "./historypopup";
+import MainScene from "./MainScene";
 import smallpopup from "./Smallpopup";
 
 const {ccclass, property} = cc._decorator;
@@ -50,6 +51,7 @@ export default class codeBox extends cc.Component {
 
     onReceiveClick()
     {
+        cc.find("Canvas").getComponent(MainScene).showLoading(true);
         APIController.getVoucher(this.id+"", (err,json)=>{
             cc.find("Canvas/PopUp/HistoryPopup").getComponent(historypopup).refreshData();
         });

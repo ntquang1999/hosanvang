@@ -10,10 +10,9 @@ export default class NewClass extends cc.Component {
     back: cc.Button = null;
     @property(cc.Label)
     rule: cc.Label = null;
-
     protected start(): void {
         this.back.node.on("click", ()=>this.onBackClick());
-        this.rule.string = GameData.rule+" sadasdas";
+        this.rule.string = GameData.rule;
         
     }
 

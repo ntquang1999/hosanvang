@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import APIController from "./APIController";
+import AudioController from "./AudioController";
 import GameData from "./GameData";
 import largepopup from "./largepopup";
 
@@ -138,11 +139,17 @@ export default class NewClass extends cc.Component {
                 }
                 else
                 {
+                    GameData.APIList.forEach(APIelement => {
+                        if(APIelement.code == json["data"]["code"])
+                        {
+                            largepopup.voucherType = APIelement.type;
+                        }
+                    });
                     largepopup.voucherText = json["data"]["desc"];
                     GameData.huntTurn = json["data"]["total_turn"];
                     largepopup.type = 0;
                 }
-                
+                cc.find("AudioController").getComponent(AudioController).playFirework();
                 let popup = cc.instantiate(this.largePopup);
                 popup.children[1].scale = 0;
                 cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();

@@ -148,7 +148,7 @@ export default class MainScene extends cc.Component {
             this.muteBtn.node.active = true;
             cc.audioEngine.resume(0);
         }); 
-        this.ivtConfirmBtn.node.on("click", ()=>{
+        this.share.node.on("click", ()=>{
             cc.sys.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         });
         GameData.generateData();   
@@ -186,16 +186,28 @@ export default class MainScene extends cc.Component {
 
     onPlayClick()
     {
-        this.huntTurnComp.active = false;
-        GameData.huntTurn--;
-        this.playing = true;
-        this.tiger.active = true;
-        this.tiger.getComponent(sp.Skeleton).animation = "1dile_dung_saulung";
-        this.buttons.active = false;
-        //this.tigerIdle.active = false;
-        cc.tween(this.tigerIdle).to(0.3,{opacity:0}).call(()=>this.tigerIdle.active = false).start();
-        cc.tween(this.timebox).to(0.3,{opacity:255}).start();
-        this.schedule(this.decreseTimer, 1);
+        if(GameData.huntTurn > 0)
+        {
+            this.huntTurnComp.active = false;
+            GameData.huntTurn--;
+            this.playing = true;
+            this.tiger.active = true;
+            this.tiger.getComponent(sp.Skeleton).animation = "1dile_dung_saulung";
+            this.buttons.active = false;
+            //this.tigerIdle.active = false;
+            cc.tween(this.tigerIdle).to(0.3,{opacity:0}).call(()=>this.tigerIdle.active = false).start();
+            cc.tween(this.timebox).to(0.3,{opacity:255}).start();
+            this.schedule(this.decreseTimer, 1);
+        }
+        else
+        {
+            smallpopup.type = 7;
+            let popup = cc.instantiate(this.smallpopup);
+            popup.children[1].scale = 0;
+            cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+            popup.parent = cc.find("Canvas/PopUp");
+        }
+        
     }
 
     onRankClick()
@@ -252,10 +264,14 @@ export default class MainScene extends cc.Component {
     {
         if(GameData.ivtconfirmed) this.ivtConfirmBtn.node.active = false;
         this.huntTurn.string = GameData.huntTurn + "";
-        if(GameData.huntTurn <= 0)
-        {
-            this.playBtn.interactable = false;
-        }
+        // if(GameData.huntTurn <= 0)
+        // {
+        //     this.playBtn.interactable = false;
+        // }
+        // else
+        // {
+        //     this.playBtn.interactable = true;
+        // }
         if(this.cooldown.string == "0s")
             cc.director.loadScene("MainScene");
         if(this.playing)

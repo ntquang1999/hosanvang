@@ -28,34 +28,40 @@ export default class NewClass extends cc.Component {
         GameData.codeList.length = 0;
         this.codeContentBox.destroyAllChildren();
         APIController.getListVoucher((err,json)=>{
-            json["data"].forEach(element => {
-                let type: number = 13;
-                let voucher: string = "NOTAVAILABLE";
-                //Set type via code
-                GameData.APIList.forEach(APIelement => {
-                    if(APIelement.code == element["giftCode"])
-                    {
-                        type = APIelement.type;
-                    }
-                });
-                if(element["status"] == 1)
-                    voucher = element["voucherData"]["code"];
-                
-                GameData.codeList.push({"type": type,"code": element["giftCode"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
-            });
-            let codeCount: number = GameData.codeList.length;
-            for(let i = 0; i<codeCount;i++)
+            if(json["data"] != null)
             {
-                let node = cc.instantiate(this.codeBox);
-                node.parent = this.codeContentBox;
-                node.getComponent(codeBox).codetype = GameData.codeList[i].type;
-                node.getComponent(codeBox).codeString = GameData.codeList[i].code;
-                node.getComponent(codeBox).timeString = GameData.codeList[i].time;
-                node.getComponent(codeBox).status = GameData.codeList[i].status;
-                node.getComponent(codeBox).voucherString = GameData.codeList[i].voucher;
-                node.getComponent(codeBox).id = GameData.codeList[i].id;
+                GameData.phoneNumber = "0" + json["data"][0]["msisdn"].substring(2);
+                json["data"].forEach(element => {
+                    let type: number = 13;
+                    let voucher: string = "NOTAVAILABLE";
+                    //Set type via code
+                    GameData.APIList.forEach(APIelement => {
+                        if(APIelement.code == element["giftCode"])
+                        {
+                            type = APIelement.type;
+                        }
+                    });
+                    if(element["status"] == 1)
+                        voucher = element["voucherData"]["code"];
+                    
+                    GameData.codeList.push({"type": type,"code": element["giftCode"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
+                });
+                let codeCount: number = GameData.codeList.length;
+                for(let i = 0; i<codeCount;i++)
+                {
+                    let node = cc.instantiate(this.codeBox);
+                    node.parent = this.codeContentBox;
+                    node.getComponent(codeBox).codetype = GameData.codeList[i].type;
+                    node.getComponent(codeBox).codeString = GameData.codeList[i].code;
+                    node.getComponent(codeBox).timeString = GameData.codeList[i].time;
+                    node.getComponent(codeBox).status = GameData.codeList[i].status;
+                    node.getComponent(codeBox).voucherString = GameData.codeList[i].voucher;
+                    node.getComponent(codeBox).id = GameData.codeList[i].id;
+                }
+                
             }
             cc.find("loading").active = false;
+                
         });
     }
 

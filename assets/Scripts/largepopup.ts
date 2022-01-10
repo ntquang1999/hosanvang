@@ -30,10 +30,14 @@ export default class largepopup extends cc.Component {
     @property(cc.Label)
     emptyLB: cc.Label = null;
 
+    @property([cc.Node])
+    voucherImg: cc.Node[] = [];
+
     static type: number = 0;
     static voucherText: string = "SHOPEE10K";
     static ticketText: string = "ABCDEFGAK47";
-    static points: number = 10;
+    //static points: number = 10;
+    static voucherType: number = 0;
 
     protected start(): void {
         this.back.node.on("click", ()=>this.onBackClick());
@@ -64,6 +68,7 @@ export default class largepopup extends cc.Component {
                 {
                     this.voucher.active = true;
                     this.voucherLB.string = largepopup.voucherText;
+                    this.voucherImg[largepopup.voucherType].active = true;
                     break;
                 }
             case 1:

@@ -13,6 +13,12 @@ export default class smallpopup extends cc.Component {
     @property(cc.Button)
     ok: cc.Button = null;
 
+    @property(cc.Button)
+    shop: cc.Button = null;
+
+    @property(cc.Button)
+    cancel: cc.Button = null;
+
     @property(cc.Node)
     error: cc.Node = null;
     
@@ -27,6 +33,9 @@ export default class smallpopup extends cc.Component {
 
     @property(cc.Node)
     info: cc.Node = null;
+
+    @property(cc.Node)
+    outOfTurn: cc.Node = null;
 
     @property(cc.Node)
     confirm: cc.Node = null;
@@ -60,6 +69,19 @@ export default class smallpopup extends cc.Component {
     protected start(): void {
         this.back.node.on("click", ()=>this.onBackClick());
         this.ok.node.on("click", ()=>this.onOkClick());
+        this.shop.node.on("click", ()=>this.onShopClick());
+        this.cancel.node.on("click", ()=>this.onBackClick());
+    }
+
+    onShopClick()
+    {
+        
+        cc.find("Canvas").getComponent(MainScene).showLoading(true);
+        APIController.getPoint((err,json)=>{
+            cc.find("Canvas").getComponent(MainScene).showLoading(false);
+        });
+        //this.node.children[2].opacity = 0;
+        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{this.node.destroy(); cc.find("Canvas").getComponent(MainScene).onShopClick();}).start();
     }
 
     onOkClick()
@@ -199,7 +221,13 @@ export default class smallpopup extends cc.Component {
                     this.ivtConfirm.active = false;
                     this.info.active = true;
                     break;
-                }        
+                }    
+            case 7:
+                {
+                    this.outOfTurn.active = true;
+                    this.ok.node.active = false;
+                    break;
+                }      
             
         }
     }
