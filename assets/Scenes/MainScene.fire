@@ -5652,19 +5652,19 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1388,
+      "width": 2000,
       "height": 2373
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 1,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -1235,
+        -540,
         19,
         0,
         0,

@@ -139,6 +139,7 @@ export default class NewClass extends cc.Component {
                 }
                 else
                 {
+                    
                     GameData.APIList.forEach(APIelement => {
                         if(APIelement.code == json["data"]["code"])
                         {

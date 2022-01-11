@@ -11,15 +11,15 @@ export default class CatchScene extends cc.Component {
     @property(cc.Node)
     error: cc.Node = null;
     protected start(): void {
-        APIController.getData();
+        //APIController.getData();
         APIController.oauth((err,json)=>{
             APIController.getTurn((err,json)=>{
                 APIController.getPoint((err,json)=>{
                     APIController.getListVoucher((err,json)=>{
                         if(json["data"] != null)
                             GameData.phoneNumber = "0" + json["data"][0]["msisdn"].substring(2);
-                        APIController.checkFirstTimeLogin();
-                        
+                            APIController.checkFirstTimeLogin();
+                            GameData.getAPIData();
                             cc.director.loadScene("MainScene");
                        
                     });

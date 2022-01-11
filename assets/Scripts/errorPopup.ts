@@ -1,3 +1,5 @@
+import GameData from "./GameData";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -15,7 +17,13 @@ export default class connectError extends cc.Component {
 
     onBackClick()
     {
-        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>cc.director.loadScene("LoadingScene")).start();      
+        if(GameData.errorType == 0)
+            cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>cc.director.loadScene("LoadingScene")).start();      
+        else 
+        {
+            cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>this.node.active = false).start();
+            GameData.errorType = 0;
+        }    
     }
 
 }

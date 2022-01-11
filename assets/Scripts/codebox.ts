@@ -1,4 +1,6 @@
 import APIController from "./APIController";
+import connectError from "./connectError";
+import GameData from "./GameData";
 import historypopup from "./historypopup";
 import MainScene from "./MainScene";
 import smallpopup from "./Smallpopup";
@@ -53,6 +55,11 @@ export default class codeBox extends cc.Component {
     {
         cc.find("Canvas").getComponent(MainScene).showLoading(true);
         APIController.getVoucher(this.id+"", (err,json)=>{
+            if(json["errorCode"] != 0)
+            {
+                GameData.errorType = 1;
+                cc.find("Canvas").getComponent(connectError).showError();
+            }
             cc.find("Canvas/PopUp/HistoryPopup").getComponent(historypopup).refreshData();
         });
     }

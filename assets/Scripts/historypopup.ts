@@ -44,7 +44,7 @@ export default class NewClass extends cc.Component {
                     if(element["status"] == 1)
                         voucher = element["voucherData"]["code"];
                     
-                    GameData.codeList.push({"type": type,"code": element["giftCode"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
+                    GameData.codeList.push({"type": type,"code": element["giftName"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
                 });
                 let codeCount: number = GameData.codeList.length;
                 for(let i = 0; i<codeCount;i++)

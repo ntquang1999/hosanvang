@@ -8,9 +8,9 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class APIController {
-    static data: string = "";
+    //static data: string = "";
     //static data: string = "2bmrcgxcc2kvartwn61635414941058";
-    //static data: string = "2bmrcgxcc2kvarti821635414922369";
+    static data: string = "2bmrcgxcc2kvarti821635414922369";
     static token: string = null;
     
     static urlParam(name) {
@@ -26,9 +26,11 @@ export default class APIController {
 
     static oauth(onFinished: (err: any, json: any) => void)
     {
+        
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/OAuth", {"data": this.data, "programCode": "HOVANG2022", "command": "OAuth"}, (err,json)=>{
             if(!err)
             {
+                console.log("zzz");
                 //console.log(json);
                 //console.log("not err");
                 if(json == null)
@@ -113,6 +115,7 @@ export default class APIController {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/roll", {"data": this.data, "programCode": "HOVANG2022", "command": "roll"}, (err,json)=>{
             if(!err)
             {
+                console.log(json);
                 if(json == null)
                 {
                     cc.find("Canvas").getComponent(connectError).showError();
@@ -145,7 +148,8 @@ export default class APIController {
     {
         Http.post("https://apiv3.viettel.vn/cgvtapiv2/getListGiftVoucher", {"programCode": "HOVANG2022", "command": "getListGiftVoucher"}, (err,json)=>{
             if(!err)
-            {     
+            {   
+                console.log(json);  
                 if(json == null)
                 {
                     cc.find("Canvas").getComponent(connectError).showError();
@@ -182,7 +186,7 @@ export default class APIController {
                 {
                     cc.find("Canvas").getComponent(connectError).showError();
                 }    else      
-                if(json["errorCode"] == 0) onFinished(err, json);
+                onFinished(err, json);
             }
             else cc.find("Canvas").getComponent(connectError).showError();
         }, {"Authorization": "Bearer " + APIController.token});
