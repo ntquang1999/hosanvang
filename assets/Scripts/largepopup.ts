@@ -35,6 +35,7 @@ export default class largepopup extends cc.Component {
 
     static type: number = 0;
     static voucherText: string = "SHOPEE10K";
+    static voucherDesc: string = "May man";
     static ticketText: string = "ABCDEFGAK47";
     //static points: number = 10;
     static voucherType: number = 0;
@@ -79,6 +80,7 @@ export default class largepopup extends cc.Component {
             case 2:
                 {
                     this.empty.active = true;
+                    this.emptyLB.string = largepopup.voucherText;
                     break;
                 }
             case 3:

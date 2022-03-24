@@ -15,6 +15,7 @@ export default class GameData extends cc.Component {
     static phoneNumber: string;
     static ivtconfirmed: boolean = false;
     static errorType: number = 0;
+    static link: string = "";
     static rule: string = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.";
 
     static codeList: {type: number, code: string, time: string, status: number, voucher: string, id: number}[] = [];

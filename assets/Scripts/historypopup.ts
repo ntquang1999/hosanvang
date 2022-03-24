@@ -31,21 +31,45 @@ export default class NewClass extends cc.Component {
             if(json["data"] != null)
             {
                 GameData.phoneNumber = "0" + json["data"][0]["msisdn"].substring(2);
-                json["data"].forEach(element => {
-                    let type: number = 13;
-                    let voucher: string = "NOTAVAILABLE";
-                    //Set type via code
-                    GameData.APIList.forEach(APIelement => {
-                        if(APIelement.code == element["giftCode"])
-                        {
-                            type = APIelement.type;
-                        }
+                if(json["data"].length<=30)
+                {
+                    json["data"].forEach(element => {
+                        let type: number = 13;
+                        let voucher: string = "NOTAVAILABLE";
+                        //Set type via code
+                        GameData.APIList.forEach(APIelement => {
+                            if(APIelement.code == element["giftCode"])
+                            {
+                                type = APIelement.type;
+                            }
+                        });
+                        if(element["status"] == 1)
+                            voucher = element["voucherData"]["code"];
+                        
+                        GameData.codeList.push({"type": type,"code": element["giftName"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
                     });
-                    if(element["status"] == 1)
-                        voucher = element["voucherData"]["code"];
-                    
-                    GameData.codeList.push({"type": type,"code": element["giftName"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
-                });
+                }
+
+                else
+                {
+                    for(let i = 0; i<=30; i++)
+                    {
+                        let element = json["data"][i];
+                        let type: number = 13;
+                        let voucher: string = "NOTAVAILABLE";
+                        GameData.APIList.forEach(APIelement => {
+                            if(APIelement.code == element["giftCode"])
+                            {
+                                type = APIelement.type;
+                            }
+                        });
+                        if(element["status"] == 1)
+                            voucher = element["voucherData"]["code"];
+                        
+                        GameData.codeList.push({"type": type,"code": element["giftName"],"time": this.timeConverter(element["winAt"]) +" "+ this.dateConverter(element["winAt"]), "status": element["status"], "voucher": voucher, "id": element["id"]});
+                    }
+                }
+                
                 let codeCount: number = GameData.codeList.length;
                 for(let i = 0; i<codeCount;i++)
                 {

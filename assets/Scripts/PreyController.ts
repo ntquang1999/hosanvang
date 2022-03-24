@@ -31,28 +31,28 @@ export default class NewClass extends cc.Component {
         {
             case "tho":
                 {
-                    console.log("Clicked tho");
+                    //console.log("Clicked tho");
                     GameData.prey = 3;
                     GameData.prizeBox = this.gift;
                     break;
                 }
             case "meo":
                 {
-                    console.log("Clicked meo");
+                    //console.log("Clicked meo");
                     GameData.prey = 2;
                     GameData.prizeBox = this.gift;
                     break;
                 }
             case "chim":
                 {
-                    console.log("Clicked chim");
+                    //console.log("Clicked chim");
                     GameData.prey = 0;
                     GameData.prizeBox = this.gift;
                     break;
                 }
             case "heo":
                 {
-                    console.log("Clicked heo");
+                    //console.log("Clicked heo");
                     GameData.prey = 1;
                     GameData.prizeBox = this.gift;
                     break;

@@ -7,6 +7,7 @@
 
 import APIController from "./APIController";
 import AudioController from "./AudioController";
+import codeBox from "./codebox";
 import GameData from "./GameData";
 import largepopup from "./largepopup";
 import smallpopup from "./Smallpopup";
@@ -21,7 +22,8 @@ export default class MainScene extends cc.Component {
     @property([cc.Node])
     spawn: cc.Node[] = [];
 
-    
+    @property([cc.Node])
+    tiger: cc.Node[] = [];
 
     @property(cc.Prefab)
     pig: cc.Prefab = null;
@@ -38,8 +40,7 @@ export default class MainScene extends cc.Component {
     @property(cc.Button)
     playBtn: cc.Button = null;
 
-    @property(cc.Node)
-    tiger: cc.Node = null;
+   
 
     @property(cc.Node)
     tigerComp: cc.Node = null;
@@ -149,7 +150,12 @@ export default class MainScene extends cc.Component {
             cc.audioEngine.resume(0);
         }); 
         this.share.node.on("click", ()=>{
-            cc.sys.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            codeBox.copyTextToClipboard(GameData.link);
+            smallpopup.type = 8;
+            let popup = cc.instantiate(this.smallpopup);
+            popup.children[1].scale = 0;
+            cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
+            popup.parent = this.popupParent;
         });
         GameData.generateData();   
         
@@ -189,10 +195,11 @@ export default class MainScene extends cc.Component {
         if(GameData.huntTurn > 0)
         {
             this.huntTurnComp.active = false;
-            GameData.huntTurn--;
+            //GameData.huntTurn--;
             this.playing = true;
-            this.tiger.active = true;
-            this.tiger.getComponent(sp.Skeleton).animation = "1dile_dung_saulung";
+            let TigerPos = this.getRandomInt(0,4);
+            this.tiger[TigerPos].active = true;
+            this.tiger[TigerPos].getComponentInChildren(sp.Skeleton).animation = "1dile_dung_saulung";
             this.buttons.active = false;
             //this.tigerIdle.active = false;
             cc.tween(this.tigerIdle).to(0.3,{opacity:0}).call(()=>this.tigerIdle.active = false).start();
@@ -377,4 +384,6 @@ export default class MainScene extends cc.Component {
         cc.tween(popup.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backOut}).start();
         popup.parent = this.popupParent;
     }
+
+    
 }

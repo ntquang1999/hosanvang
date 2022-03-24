@@ -79,6 +79,7 @@ export default class NewClass extends cc.Component {
     {
         this.jumptime = 2.5;
         this.tiger.animation = "3jump";
+        this.jumpbtn.node.active = false;
     }
 
 
@@ -131,11 +132,12 @@ export default class NewClass extends cc.Component {
             this.loading.active = true;
             APIController.roll((err,json)=>{
                 this.loading.active = false;
-                console.log(json["data"]);
+                //console.log(json["data"]);
                 if(json["data"]["code"] == "LUCKY")
                 {
                     largepopup.type = 2;
                     GameData.huntTurn = json["data"]["total_turn"];
+                    largepopup.voucherText = json["data"]["desc"];
                 }
                 else
                 {

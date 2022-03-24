@@ -8,12 +8,15 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Button)
     back: cc.Button = null;
-    @property(cc.Label)
-    rule: cc.Label = null;
+    @property(cc.RichText)
+    rule: cc.RichText = null;
     protected start(): void {
         this.back.node.on("click", ()=>this.onBackClick());
+              
+    }
+
+    protected update(dt: number): void {
         this.rule.string = GameData.rule;
-        
     }
 
     onBackClick()

@@ -151,7 +151,7 @@ export default class CatchScene extends cc.Component {
                     
                     if(this.convertTimer<=0)
                     {
-                        console.log("AA");
+                        //console.log("AA");
                         this.running = true;
                         
                         this.prey.getComponent(sp.Skeleton).animation = "3run";

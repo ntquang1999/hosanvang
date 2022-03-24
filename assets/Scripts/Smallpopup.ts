@@ -2,7 +2,7 @@ import APIController from "./APIController";
 import GameData from "./GameData";
 import MainScene from "./MainScene";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class smallpopup extends cc.Component {
@@ -21,7 +21,7 @@ export default class smallpopup extends cc.Component {
 
     @property(cc.Node)
     error: cc.Node = null;
-    
+
     @property(cc.Node)
     success: cc.Node = null;
 
@@ -30,6 +30,9 @@ export default class smallpopup extends cc.Component {
 
     @property(cc.Node)
     informCopied: cc.Node = null;
+
+    @property(cc.Node)
+    informCopiedLink: cc.Node = null;
 
     @property(cc.Node)
     info: cc.Node = null;
@@ -67,27 +70,26 @@ export default class smallpopup extends cc.Component {
     static item: number = 0;
 
     protected start(): void {
-        this.back.node.on("click", ()=>this.onBackClick());
-        this.ok.node.on("click", ()=>this.onOkClick());
-        this.shop.node.on("click", ()=>this.onShopClick());
-        this.cancel.node.on("click", ()=>this.onBackClick());
+        this.back.node.on("click", () => this.onBackClick());
+        this.ok.node.on("click", () => this.onOkClick());
+        this.shop.node.on("click", () => this.onShopClick());
+        this.cancel.node.on("click", () => this.onBackClick());
     }
 
-    onShopClick()
-    {
-        
-        cc.find("Canvas").getComponent(MainScene).showLoading(true);
-        APIController.getPoint((err,json)=>{
-            cc.find("Canvas").getComponent(MainScene).showLoading(false);
-        });
-        //this.node.children[2].opacity = 0;
-        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{this.node.destroy(); cc.find("Canvas").getComponent(MainScene).onShopClick();}).start();
+    onShopClick() {
+
+        // cc.find("Canvas").getComponent(MainScene).showLoading(true);
+        // APIController.getPoint((err,json)=>{
+        //     cc.find("Canvas").getComponent(MainScene).showLoading(false);
+        // });
+        // //this.node.children[2].opacity = 0;
+        // cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{this.node.destroy(); cc.find("Canvas").getComponent(MainScene).onRankClick();}).start();
+        this.onBackClick();
+        cc.find("Canvas").getComponent(MainScene).onInviteClick();
     }
 
-    onOkClick()
-    {
-        switch(smallpopup.type)
-        {
+    onOkClick() {
+        switch (smallpopup.type) {
             case 0:
                 {
                     this.onBackClick();
@@ -106,51 +108,52 @@ export default class smallpopup extends cc.Component {
             case 3:
                 {
                     cc.find("Canvas").getComponent(MainScene).showLoading(true);
-                    APIController.exchangePoint(smallpopup.turn+"", (err, json)=>{
+                    APIController.exchangePoint(smallpopup.turn + "", (err, json) => {
                         cc.find("Canvas").getComponent(MainScene).showLoading(false);
-                        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 1; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
-                    });                
+                        cc.tween(this.node.children[1]).to(0.3, { scale: 0 }, { easing: cc.easing.backIn }).call(() => { smallpopup.type = 1; cc.tween(this.node.children[1]).to(0.3, { scale: 1 }, { easing: cc.easing.backIn }).start() }).start();
+                    });
                     break;
                 }
             case 4:
                 {
                     let sdt: string;
-                    if(this.sdtInviteLB.string.substring(0,2) == "84") 
-                    {
-                        sdt = this.sdtInviteLB.string;
-                    }
-                    else
-                    {
-                        sdt = "84" + this.sdtInviteLB.string.substring(1);
-                    }
+                    // if (this.sdtInviteLB.string.substring(0, 2) == "84") {
+                    //     sdt = this.sdtInviteLB.string;
+                    // }
+                    // else if (this.sdtInviteLB.string.substring(0, 1) == "0") {
+                    //     sdt = "84" + this.sdtInviteLB.string.substring(1);
+                    // }
+                    // else
+                    // {
+                    //     sdt = "84" + this.sdtInviteLB.string;
+                    // }
+                    sdt = this.sdtInviteLB.string;
                     console.log(sdt);
                     cc.find("Canvas").getComponent(MainScene).showLoading(true);
-                    APIController.invite(sdt, (err, json)=>{
+                    APIController.invite(sdt, (err, json) => {
                         cc.find("Canvas").getComponent(MainScene).showLoading(false);
-                        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 6; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
+                        cc.tween(this.node.children[1]).to(0.3, { scale: 0 }, { easing: cc.easing.backIn }).call(() => { smallpopup.type = 6; cc.tween(this.node.children[1]).to(0.3, { scale: 1 }, { easing: cc.easing.backIn }).start() }).start();
                         this.infoLB.string = json["message"];
-                    }); 
+                    });
                     break;
                 }
             case 5:
                 {
                     let sdt: string;
-                    if(this.sdtInviteLB.string.substring(0,2) == "84") 
-                    {
+                    if (this.sdtInviteLB.string.substring(0, 2) == "84") {
                         sdt = this.sdtInviteLB.string;
                     }
-                    else
-                    {
+                    else {
                         sdt = "84" + this.sdtConfirmLB.string.substring(1);
                     }
                     console.log(sdt);
                     cc.find("Canvas").getComponent(MainScene).showLoading(true);
-                    APIController.confirmIvt(sdt, (err, json)=>{
+                    APIController.confirmIvt(sdt, (err, json) => {
                         cc.find("Canvas").getComponent(MainScene).showLoading(false);
-                        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>{smallpopup.type = 6; cc.tween(this.node.children[1]).to(0.3,{scale:1}, {easing: cc.easing.backIn}).start()}).start();
-                        if(json["errorCode"] == 0) GameData.ivtconfirmed = true;
+                        cc.tween(this.node.children[1]).to(0.3, { scale: 0 }, { easing: cc.easing.backIn }).call(() => { smallpopup.type = 6; cc.tween(this.node.children[1]).to(0.3, { scale: 1 }, { easing: cc.easing.backIn }).start() }).start();
+                        if (json["errorCode"] == 0) GameData.ivtconfirmed = true;
                         this.infoLB.string = json["message"];
-                    }); 
+                    });
                     break;
                 }
             case 6:
@@ -158,24 +161,26 @@ export default class smallpopup extends cc.Component {
                     this.onBackClick();
                     break;
                 }
+            case 8:
+                {
+                    this.onBackClick();
+                    break;
+                }
         }
     }
 
-    onBackClick()
-    {
+    onBackClick() {
         cc.find("Canvas").getComponent(MainScene).showLoading(true);
-        APIController.getPoint((err,json)=>{
+        APIController.getPoint((err, json) => {
             cc.find("Canvas").getComponent(MainScene).showLoading(false);
         });
         //this.node.children[2].opacity = 0;
-        cc.tween(this.node.children[1]).to(0.3,{scale:0}, {easing: cc.easing.backIn}).call(()=>this.node.destroy()).start();     
+        cc.tween(this.node.children[1]).to(0.3, { scale: 0 }, { easing: cc.easing.backIn }).call(() => this.node.destroy()).start();
     }
 
-    update(dt)
-    {
-        
-        switch(smallpopup.type)
-        {
+    update(dt) {
+
+        switch (smallpopup.type) {
             case 0:
                 {
                     this.error.active = true;
@@ -186,11 +191,11 @@ export default class smallpopup extends cc.Component {
                     this.success.active = true;
                     this.confirm.active = false;
                     this.successLB.string = "Quý khách đã đổi thành công\n"
-                    + smallpopup.point 
-                    + " điểm viettel++ lấy " +smallpopup.turn+ " lượt quay";
+                        + smallpopup.point
+                        + " điểm viettel++ lấy " + smallpopup.turn + " lượt quay";
                     break;
                 }
-             case 2:
+            case 2:
                 {
                     this.informCopied.active = true;
                     break;
@@ -201,15 +206,15 @@ export default class smallpopup extends cc.Component {
 
                     this.confirm.active = true;
                     this.confirmLB.string = "Quý khách có chắc chắn muốn đổi\n"
-                    + smallpopup.point 
-                    + " điểm viettel++ lấy " +smallpopup.turn+ " lượt quay";
+                        + smallpopup.point
+                        + " điểm viettel++ lấy " + smallpopup.turn + " lượt quay";
                     break;
                 }
             case 4:
                 {
                     this.invite.active = true;
                     break;
-                }   
+                }
             case 5:
                 {
                     this.ivtConfirm.active = true;
@@ -221,14 +226,19 @@ export default class smallpopup extends cc.Component {
                     this.ivtConfirm.active = false;
                     this.info.active = true;
                     break;
-                }    
+                }
             case 7:
                 {
                     this.outOfTurn.active = true;
                     this.ok.node.active = false;
                     break;
-                }      
-            
+                }
+            case 8:
+                {
+                    this.informCopiedLink.active = true;
+                    break;
+                }
+
         }
     }
 }
