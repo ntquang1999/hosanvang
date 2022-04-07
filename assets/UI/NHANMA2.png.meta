@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "20e1b6ff-e8ba-4050-9886-636fbb379bd3",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "NHANMA2": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "ad7b2fcc-04be-438a-b135-96f2c737c6d1",
-      "importer": "sprite-frame",
       "rawTextureUuid": "20e1b6ff-e8ba-4050-9886-636fbb379bd3",
       "trimType": "auto",
       "trimThreshold": 1,

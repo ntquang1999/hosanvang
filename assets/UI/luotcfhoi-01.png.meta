@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "d83d7640-f308-4cc8-afc7-78269f3c853b",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "luotcfhoi-01": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "cd627ac1-c94c-4f85-8027-22d4dab29c7a",
-      "importer": "sprite-frame",
       "rawTextureUuid": "d83d7640-f308-4cc8-afc7-78269f3c853b",
       "trimType": "auto",
       "trimThreshold": 1,

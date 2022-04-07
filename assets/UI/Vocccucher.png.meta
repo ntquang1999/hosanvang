@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "2d735727-f7a6-4b7f-b9a5-a6cdc1d6f11f",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Vocccucher": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "1681421c-75c2-45d5-bd70-9eaa3112dd6e",
-      "importer": "sprite-frame",
       "rawTextureUuid": "2d735727-f7a6-4b7f-b9a5-a6cdc1d6f11f",
       "trimType": "auto",
       "trimThreshold": 1,

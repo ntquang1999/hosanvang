@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "aa41246e-5c4b-4811-92fa-efbe24f3d7ce",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Mã Dự Thưởddddng": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "75c82371-97c6-4531-899a-50143bb8a1b1",
-      "importer": "sprite-frame",
       "rawTextureUuid": "aa41246e-5c4b-4811-92fa-efbe24f3d7ce",
       "trimType": "auto",
       "trimThreshold": 1,

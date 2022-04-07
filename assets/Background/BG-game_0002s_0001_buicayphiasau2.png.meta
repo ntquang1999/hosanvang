@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "3cf7dff0-9f8e-46ec-82de-afdb11e13b4d",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "BG-game_0002s_0001_buicayphiasau2": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "974d3629-71ab-4578-bd89-422ab1de16ff",
-      "importer": "sprite-frame",
       "rawTextureUuid": "3cf7dff0-9f8e-46ec-82de-afdb11e13b4d",
       "trimType": "auto",
       "trimThreshold": 1,

@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "1ff16564-4cd4-46da-a30b-e25cd49e043a",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "BG-game_0002_cay3": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "92965326-8f16-4ac1-93cd-cd72768d4dd1",
-      "importer": "sprite-frame",
       "rawTextureUuid": "1ff16564-4cd4-46da-a30b-e25cd49e043a",
       "trimType": "auto",
       "trimThreshold": 1,

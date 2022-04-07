@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "b4105856-3a9b-48d4-875a-30fbe52944e2",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "popup tropic2 1": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "35527e79-a716-406f-9a6e-69e8d1251c0d",
-      "importer": "sprite-frame",
       "rawTextureUuid": "b4105856-3a9b-48d4-875a-30fbe52944e2",
       "trimType": "auto",
       "trimThreshold": 1,

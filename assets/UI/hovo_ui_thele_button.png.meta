@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "fa8a2da7-dc19-41d7-bbb5-029a67f43e78",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "hovo_ui_thele_button": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "24780087-c140-4aa4-bf86-f7c90faac0f7",
-      "importer": "sprite-frame",
       "rawTextureUuid": "fa8a2da7-dc19-41d7-bbb5-029a67f43e78",
       "trimType": "auto",
       "trimThreshold": 1,

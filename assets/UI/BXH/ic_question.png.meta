@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "2010fa69-f082-4895-be7d-dd540e232934",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "ic_question": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "1f301cfb-e002-4989-ad0c-6d8af22ce55f",
-      "importer": "sprite-frame",
       "rawTextureUuid": "2010fa69-f082-4895-be7d-dd540e232934",
       "trimType": "auto",
       "trimThreshold": 1,

@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "c9f8cb92-36d5-4eed-8fb6-d69f840385be",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Ellipse 9": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "5928be0c-ec23-47cd-8cd7-c8dcf7bec527",
-      "importer": "sprite-frame",
       "rawTextureUuid": "c9f8cb92-36d5-4eed-8fb6-d69f840385be",
       "trimType": "auto",
       "trimThreshold": 1,

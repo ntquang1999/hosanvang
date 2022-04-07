@@ -17,7 +17,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class MainScene extends cc.Component {
 
-    
+    public static Instance;
 
     @property([cc.Node])
     spawn: cc.Node[] = [];
@@ -120,6 +120,9 @@ export default class MainScene extends cc.Component {
     @property(cc.Node)
     loadingIcon: cc.Node = null;
 
+    @property(cc.Node)
+    expiriedPopup: cc.Node = null;
+
     playing: boolean = false;
 
     pos: number[] = [-1,-1,-1,-1];
@@ -127,6 +130,10 @@ export default class MainScene extends cc.Component {
     timer: number[] = [-0.5,-0.5,-0.5,-0.5];
 
     cooldownTime: number = 59;
+
+    protected onLoad(): void {
+        MainScene.Instance = this;
+    }
 
     start()
     {
@@ -164,6 +171,16 @@ export default class MainScene extends cc.Component {
     showLoading(i: boolean)
     {
         this.loadingIcon.active = i;
+    }
+
+    onExpiriedOkClick()
+    {
+        this.expiriedPopup.active = false;
+    }
+
+    showPopupExpiried()
+    {
+        this.expiriedPopup.active = true;
     }
 
     onInviteClick()

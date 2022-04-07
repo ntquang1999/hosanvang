@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "07c418b9-d971-4d94-be06-9c313f3f1734",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Quý khách không đủ xu vàng để đổi lấy gói lượt chơi này. Vui lòng thử lại sau": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "c3f2d585-57e1-4a23-846c-4fb327598646",
-      "importer": "sprite-frame",
       "rawTextureUuid": "07c418b9-d971-4d94-be06-9c313f3f1734",
       "trimType": "auto",
       "trimThreshold": 1,

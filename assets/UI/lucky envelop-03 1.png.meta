@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "150f2f44-d29d-42a3-844a-4af38f8ff6a6",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "lucky envelop-03 1": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "b3ac0217-0161-4410-8a33-f9d9b7d7bcb9",
-      "importer": "sprite-frame",
       "rawTextureUuid": "150f2f44-d29d-42a3-844a-4af38f8ff6a6",
       "trimType": "auto",
       "trimThreshold": 1,

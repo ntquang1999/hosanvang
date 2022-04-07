@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "6b9862c0-9ae6-43a2-9710-c031ad5b7c4d",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "lucky envelossp-01 1": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "4a6b4856-b705-4fc2-abc3-74ee78d4ddb1",
-      "importer": "sprite-frame",
       "rawTextureUuid": "6b9862c0-9ae6-43a2-9710-c031ad5b7c4d",
       "trimType": "auto",
       "trimThreshold": 1,

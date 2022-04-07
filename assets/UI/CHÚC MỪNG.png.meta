@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "e56ee4df-565b-47ab-b0f0-e7cd5ba4b307",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "CHÚC MỪNG": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "b46b97f5-60c5-40c5-b325-213121df7675",
-      "importer": "sprite-frame",
       "rawTextureUuid": "e56ee4df-565b-47ab-b0f0-e7cd5ba4b307",
       "trimType": "auto",
       "trimThreshold": 1,

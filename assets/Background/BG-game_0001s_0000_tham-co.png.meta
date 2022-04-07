@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "4b2ae3ef-6475-4b78-9b03-3c3f33f52eed",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "BG-game_0001s_0000_tham-co": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "8784875f-ebbf-4fbd-a308-0d8a11326abe",
-      "importer": "sprite-frame",
       "rawTextureUuid": "4b2ae3ef-6475-4b78-9b03-3c3f33f52eed",
       "trimType": "auto",
       "trimThreshold": 1,

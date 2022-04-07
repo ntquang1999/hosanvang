@@ -47,11 +47,25 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     loading: cc.Node = null;
 
+    @property(cc.Node)
+    expiriedPopup: cc.Node = null;
+
     pauseTime: boolean = false;
 
     cooldownTime: number = 19;
 
     jumptime = -1;
+
+    onExpiriedOkClick()
+    {
+        this.expiriedPopup.active = false;
+        cc.director.loadScene("MainScene");
+    }
+
+    showPopupExpiried()
+    {
+        this.expiriedPopup.active = true;
+    }
 
     protected onLoad(): void {
        cc.director.getPhysicsManager().enabled = true;
@@ -132,7 +146,11 @@ export default class NewClass extends cc.Component {
             this.loading.active = true;
             APIController.roll((err,json)=>{
                 this.loading.active = false;
-                //console.log(json["data"]);
+                if(json["errorCode"] == 98)
+                {
+                    this.showPopupExpiried();
+                    return;
+                }
                 if(json["data"]["code"] == "LUCKY")
                 {
                     largepopup.type = 2;

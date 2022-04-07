@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "29a9faba-6384-4835-9d3b-94857c21cea6",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "BG-game_0000s_0000_cayto2": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "9868287d-d4d0-4a37-9d15-47828e6f308f",
-      "importer": "sprite-frame",
       "rawTextureUuid": "29a9faba-6384-4835-9d3b-94857c21cea6",
       "trimType": "auto",
       "trimThreshold": 1,

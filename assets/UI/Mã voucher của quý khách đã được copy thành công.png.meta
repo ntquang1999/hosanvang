@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "14e6f9b2-b84c-4aa7-b106-8b32d5b097d5",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Mã voucher của quý khách đã được copy thành công": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "8b09bb18-46d8-409c-9081-cd97f9a51e3a",
-      "importer": "sprite-frame",
       "rawTextureUuid": "14e6f9b2-b84c-4aa7-b106-8b32d5b097d5",
       "trimType": "auto",
       "trimThreshold": 1,

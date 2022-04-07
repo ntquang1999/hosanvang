@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "10d50c03-633f-43c2-a383-985d76546155",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "hovo_ui_lichsu_button": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "78b2ad49-3350-4a72-8969-b925629589b0",
-      "importer": "sprite-frame",
       "rawTextureUuid": "10d50c03-633f-43c2-a383-985d76546155",
       "trimType": "auto",
       "trimThreshold": 1,

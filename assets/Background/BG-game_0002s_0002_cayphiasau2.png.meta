@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "87f0b4c6-2d64-493d-91b1-fa5c4d97387d",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "BG-game_0002s_0002_cayphiasau2": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "2fc5167f-ce09-4cf3-97ba-94ca555b817e",
-      "importer": "sprite-frame",
       "rawTextureUuid": "87f0b4c6-2d64-493d-91b1-fa5c4d97387d",
       "trimType": "auto",
       "trimThreshold": 1,

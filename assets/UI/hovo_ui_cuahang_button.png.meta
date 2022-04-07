@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "2ab278e8-6691-4c94-8f15-073b77886090",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "hovo_ui_cuahang_button": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "d4551295-5246-423b-b6de-48f8175555c3",
-      "importer": "sprite-frame",
       "rawTextureUuid": "2ab278e8-6691-4c94-8f15-073b77886090",
       "trimType": "auto",
       "trimThreshold": 1,

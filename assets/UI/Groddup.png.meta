@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "3b063a3a-2097-47a3-a9ad-8c68300b6584",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Groddup": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "2c95432d-4745-4a16-9f13-5a6b9933ef8d",
-      "importer": "sprite-frame",
       "rawTextureUuid": "3b063a3a-2097-47a3-a9ad-8c68300b6584",
       "trimType": "auto",
       "trimThreshold": 1,

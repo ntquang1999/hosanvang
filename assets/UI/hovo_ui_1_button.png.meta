@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "7a579450-55e1-4084-8331-9381b22f3736",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "hovo_ui_1_button": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "72860ec7-75dd-4a68-9f77-e357baf2cf8e",
-      "importer": "sprite-frame",
       "rawTextureUuid": "7a579450-55e1-4084-8331-9381b22f3736",
       "trimType": "auto",
       "trimThreshold": 1,

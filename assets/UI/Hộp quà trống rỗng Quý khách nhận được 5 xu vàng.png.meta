@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "37d41be0-3873-48ba-9472-e3c5db79eb78",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Hộp quà trống rỗng Quý khách nhận được 5 xu vàng": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "9436ae54-bac7-49f9-9be6-426fd04d6b54",
-      "importer": "sprite-frame",
       "rawTextureUuid": "37d41be0-3873-48ba-9472-e3c5db79eb78",
       "trimType": "auto",
       "trimThreshold": 1,

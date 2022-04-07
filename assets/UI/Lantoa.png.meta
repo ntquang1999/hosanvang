@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "ba6d3d77-d70d-4a56-b742-4635e07eb38c",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Lantoa": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "400b3ee3-9ec4-4a55-85b1-8ded4afd3b5e",
-      "importer": "sprite-frame",
       "rawTextureUuid": "ba6d3d77-d70d-4a56-b742-4635e07eb38c",
       "trimType": "auto",
       "trimThreshold": 1,

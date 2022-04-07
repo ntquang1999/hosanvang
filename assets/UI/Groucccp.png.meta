@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "5dca13bb-5c17-49d8-9950-8e85ad3a4ea0",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "Groucccp": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "179e3647-2086-41df-b6a0-9e40349ff886",
-      "importer": "sprite-frame",
       "rawTextureUuid": "5dca13bb-5c17-49d8-9950-8e85ad3a4ea0",
       "trimType": "auto",
       "trimThreshold": 1,

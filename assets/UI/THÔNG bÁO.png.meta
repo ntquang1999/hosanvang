@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "18bd05cc-9044-4237-af7d-a597919fc882",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "THÔNG bÁO": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "35cce35a-fd2a-431f-a7cf-6ef5d0f22361",
-      "importer": "sprite-frame",
       "rawTextureUuid": "18bd05cc-9044-4237-af7d-a597919fc882",
       "trimType": "auto",
       "trimThreshold": 1,

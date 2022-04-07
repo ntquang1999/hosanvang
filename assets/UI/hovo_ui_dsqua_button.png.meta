@@ -1,7 +1,6 @@
 {
-  "ver": "2.3.7",
+  "ver": "2.3.5",
   "uuid": "53b7b21e-7a37-4b01-9304-002ffc416cd3",
-  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,9 +12,8 @@
   "platformSettings": {},
   "subMetas": {
     "hovo_ui_dsqua_button": {
-      "ver": "1.0.6",
+      "ver": "1.0.4",
       "uuid": "627ec052-143f-4a20-bc94-f241c07fd526",
-      "importer": "sprite-frame",
       "rawTextureUuid": "53b7b21e-7a37-4b01-9304-002ffc416cd3",
       "trimType": "auto",
       "trimThreshold": 1,
